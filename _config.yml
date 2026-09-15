@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://angela-tylee.github.io/blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,6 +97,20 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: minos
+
+# Hidden (unlisted) posts — hexo-hide-posts
+## Add `hidden: true` to a post's front-matter to keep its permalink working
+## while removing it from the index, /archives, categories, tags and search.
+## List them with `pnpm exec hexo hidden:list`.
+hide_posts:
+  enable: true
+  filter: hidden
+  noindex: true
+  ## The plugin only auto-enables this for Hexo 7, but Hexo 8 kept the behaviour
+  ## the patch undoes: Category/Tag `length` counts raw join rows rather than
+  ## visible posts, so a category whose only post is hidden would still be listed
+  ## and render an empty page. Must stay `true` on Hexo 8.
+  hexo_7_compatibility_patch: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
