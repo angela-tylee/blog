@@ -1,3 +1,4 @@
 [submodule "themes/minos"]
 	path = themes/minos
 	url = git@github.com:angela-tylee/hexo-theme-minos-clone.git
+	branch = develop
