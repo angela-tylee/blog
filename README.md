@@ -27,6 +27,48 @@ pnpm build      # generate static site into public/
 pnpm clean      # clear cache (db.json) and public/
 ```
 
+## Retiring a post
+
+Two ways to take a published post out of circulation, depending on whether its URL
+should survive.
+
+**Gone entirely** — move the file into [source/\_archive](source/_archive):
+
+```bash
+git mv source/_posts/<slug>.md source/_archive/
+```
+
+Hexo skips any path segment beginning with `_` or `.`, so nothing in
+`source/_archive/` is rendered or copied to `public/`. There is nothing magic about
+the name — any `_`-prefixed folder behaves the same way. Un-retire by moving the
+file back to `source/_posts/`.
+
+**Unlisted** — add `hidden: true` to the post's front-matter:
+
+```yaml
+---
+title: Some old post
+hidden: true
+---
+```
+
+The permalink keeps working, so existing links and bookmarks survive, but the post
+disappears from the home page, `/archives`, categories, tags and search, and gets a
+`noindex` meta tag. This is the [hexo-hide-posts](https://github.com/prinsss/hexo-hide-posts)
+plugin, configured under `hide_posts` in [_config.yml](_config.yml). List every
+hidden post with:
+
+```bash
+pnpm exec hexo hidden:list
+```
+
+Two built-in alternatives, for completeness:
+
+| Method | Effect |
+| --- | --- |
+| Move to `source/_drafts/` | Same as `_archive`, but reversible with `pnpm exec hexo publish <slug>`, and rendered by `pnpm server --draft`. Use it for a post you mean to rework and republish, not one you are retiring. |
+| `published: false` in front-matter | Same as `_archive`, without moving the file. Works, but is undocumented upstream. |
+
 ## Configuration
 
 | File | Purpose |
