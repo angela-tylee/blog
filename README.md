@@ -92,3 +92,8 @@ git add themes/minos && git commit -m "chore: update minos theme"
 
 The blog repo records only the theme's commit SHA, so the theme bump must be
 committed here as well.
+
+## Continue Improvements
+
+- Add Table of Contents for each page.
+- Add last updated time.
