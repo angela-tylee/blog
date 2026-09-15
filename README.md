@@ -97,3 +97,4 @@ committed here as well.
 
 - Add Table of Contents for each page.
 - Add last updated time.
+- Add 404 page.
