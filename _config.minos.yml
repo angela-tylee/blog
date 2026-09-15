@@ -27,9 +27,8 @@ article:
 # Navigation bar menu links.
 menu:
   Archives: /archives
-  Lifestyle: /categories/LifeStyle
-  Music: /categories/Music
   Technology: /categories/Technology
+  Lifestyle: /categories/LifeStyle
   About: /about
 
 # Search plugin settings.
