@@ -2,6 +2,8 @@
 
 A [Hexo](https://hexo.io/) blog using the [Minos](https://github.com/ppoffice/hexo-theme-minos) theme.
 
+Getting Started with Minos: [Getting Started with Minos](https://ppoffice.github.io/hexo-theme-minos/)
+
 ## Setup
 
 The theme lives in a **git submodule** ([themes/minos](themes/minos)), so a plain
