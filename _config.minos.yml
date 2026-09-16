@@ -62,10 +62,13 @@ plugins:
 # is set to the class name of a FontAwesome 5 icon. The `footer_links` below also gives an
 # example of setting plain text links.
 navbar_links:
-  GitHub:
+  LinkedIn:
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/angela-tylee/
+  Github:
     icon: fab fa-github
-    url: https://github.com/ppoffice/hexo-theme-minos
+    url: https://github.com/angela-tylee
 
 # Links at the bottom of the page.
 footer_links:
-  GitHub: https://github.com/ppoffice/hexo-theme-minos
+  GitHub: https://github.com/angela-tylee
