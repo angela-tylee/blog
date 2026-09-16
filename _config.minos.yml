@@ -39,14 +39,18 @@ search:
 toc: false
 
 # Share plugin settings.
-share:
-  type: sharethis
-  install_url:
+# Disabled: the theme only ships third-party providers (sharethis / addthis),
+# both of which require an `install_url` script and load a tracking script on
+# every post. Set `type` to `sharethis` or `addthis` with an `install_url` to
+# re-enable.
+# share:
+#   type: sharethis
+#   install_url:
 
-# Comment plugin settings.
-comment:
-  type: disqus
-  shortname:
+# # Comment plugin settings.
+# comment:
+#   type: disqus
+#   shortname:
 
 # Other plugins and their settings.
 plugins:
