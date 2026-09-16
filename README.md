@@ -100,3 +100,12 @@ committed here as well.
 - Add Table of Contents for each page.
 - Add last updated time.
 - Add 404 page.
+- Add multi-language support.
+  - [.scratch/multi-language-plan.md](.scratch/multi-language-plan.md)
+  - [利用 Hexo 來建立一個 多語系 部落格](https://medium.com/learn-or-die/%E5%88%A9%E7%94%A8-hexo-%E4%BE%86%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-%E5%A4%9A%E8%AA%9E%E7%B3%BB-%E9%83%A8%E8%90%BD%E6%A0%BC-4545cc6cdb6)
+- Add 'share this' button. [.scratch/sharethis-plan.md](.scratch/sharethis-plan.md)
+- Add 'Comment' section
+- Add colorquote and VSCode shortcut
+- Change to custom domain
+- Add favicon
+- Github Issue Tracker
