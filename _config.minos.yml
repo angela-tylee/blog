@@ -36,7 +36,7 @@ search:
   type: insight
 
 # Navigation bar toc settings
-toc: false
+toc: true
 
 # Share plugin settings.
 # Disabled: the theme only ships third-party providers (sharethis / addthis),
