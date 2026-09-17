@@ -36,17 +36,21 @@ search:
   type: insight
 
 # Navigation bar toc settings
-toc: false
+toc: true
 
 # Share plugin settings.
-share:
-  type: sharethis
-  install_url:
+# Disabled: the theme only ships third-party providers (sharethis / addthis),
+# both of which require an `install_url` script and load a tracking script on
+# every post. Set `type` to `sharethis` or `addthis` with an `install_url` to
+# re-enable.
+# share:
+#   type: sharethis
+#   install_url:
 
-# Comment plugin settings.
-comment:
-  type: disqus
-  shortname:
+# # Comment plugin settings.
+# comment:
+#   type: disqus
+#   shortname:
 
 # Other plugins and their settings.
 plugins:
@@ -62,10 +66,13 @@ plugins:
 # is set to the class name of a FontAwesome 5 icon. The `footer_links` below also gives an
 # example of setting plain text links.
 navbar_links:
-  GitHub:
+  LinkedIn:
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/angela-tylee/
+  Github:
     icon: fab fa-github
-    url: https://github.com/ppoffice/hexo-theme-minos
+    url: https://github.com/angela-tylee
 
 # Links at the bottom of the page.
 footer_links:
-  GitHub: https://github.com/ppoffice/hexo-theme-minos
+  GitHub: https://github.com/angela-tylee
