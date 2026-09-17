@@ -148,6 +148,26 @@ is rendered:
 Because the two languages are separate sites, cross-linking zh-tw → en is possible but
 usually not what you want.
 
+Add snippet to `keybindings.json`
+```json
+{
+  "key": "shift+cmd+m",
+  "command": "editor.action.insertSnippet",
+  "when": "editorTextFocus && editorLangId == 'markdown'",
+  "args": {
+      "snippet": "{% colorquote ${1|info,success,warning,danger,glossary,tips,appendix|} %}\n${0:$TM_SELECTED_TEXT}\n{% endcolorquote %}"
+  }
+},
+{
+  "key": "cmd+'",
+  "command": "editor.action.insertSnippet",
+  "when": "editorTextFocus && editorLangId == markdown",
+  "args": {
+      "snippet": "> ${0:$TM_SELECTED_TEXT}"
+  }
+}
+```
+
 ### Images
 
 Put image files in `source/images/` — anything under `source/` not prefixed with `_`
