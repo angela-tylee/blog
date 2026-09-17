@@ -5,6 +5,14 @@ categories: Technology
 tags: ['javascript', 'beginner']
 ---
 
+{% colorquote appendix %}
+學習重點：
+
+- 為什麼會有這麼多種變數宣告的方式？什麼時候要用哪一種？
+- 常常看到 `ReferenceError: Cannot access before initialization`，這是什麼意思？
+{% endcolorquote %}
+
+
 第一篇獻給基礎中的基礎：變數宣告以及 var, let, const 的差異
 
 ## 什麼是變數的「宣告」？
@@ -21,7 +29,7 @@ let John = {
 }
 ```
 
-而從另一個更正確的角度來說明，是把一個值或一段程式碼回傳的值「儲存」起來
+從另一個更正確的角度來說明，是把一個值或一段程式碼回傳的值「儲存」起來
 
 而這個值可以是字串、數值、或物件
 
@@ -33,12 +41,13 @@ let John = {
 const res = await fetch(url);
 ```
 
->**詞彙解釋**
->
->所謂「回傳」
->
->看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ work in progress…
->
+{% colorquote glossary %}
+**詞彙解釋**
+
+所謂「回傳」
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ work in progress…
+
+{% endcolorquote %}
 
 由於在撰寫程式碼時，DRY (Do not repeat yourself) 是一個很基本的原則，將值儲存到變數中，幾乎是撰寫 JavaScript 的起手式
 
@@ -72,47 +81,47 @@ let / const 變數宣告、箭頭函式（arrow functions）、樣板字面�
 
 ### 可否重複宣告 / 重新賦值
 
-- var
-    - 可以重複宣告、重新賦值
-- let
-    - 不可以重複宣告、可以重新賦值
-    - 實務上的用法：可以想成更現代的 `var` ，不可以重複宣告的特性，使 `let` 可以避免以往 `var` 容易被污染的狀況（開發者可能在無意間**重複宣告相同名稱的變數**，導致原本的值被覆蓋而沒注意到，多人開發中更容易無意間造成問題）
+#### var
+- 可以重複宣告、重新賦值
+#### let
+- 不可以重複宣告、可以重新賦值
+- 實務上的用法：可以想成更現代的 `var` ，不可以重複宣告的特性，使 `let` 可以避免以往 `var` 容易被污染的狀況（開發者可能在無意間**重複宣告相同名稱的變數**，導致原本的值被覆蓋而沒注意到，多人開發中更容易無意間造成問題）
+    
+    ```jsx
+    var message = "Hello";
+    // ...中間一大段程式
+    var message = "Overwrite Hello"; // 完全不會出錯，覆寫了而不自知
+    ```
+    
+    ```jsx
+    let count = 1;
+    let count = 2; // ❌ SyntaxError: Identifier 'count' has already been declared
+    ```
+    
+    使用 `let` 時一旦重複宣告變數，**程式會直接報錯**，讓開發者立刻發現問題，**而不是默默覆蓋值，造成更難追的 bug**
         
-        ```jsx
-        var message = "Hello";
-        // ...中間一大段程式
-        var message = "Overwrite Hello"; // 完全不會出錯，覆寫了而不自知
-        ```
-        
-        ```jsx
-        let count = 1;
-        let count = 2; // ❌ SyntaxError: Identifier 'count' has already been declared
-        ```
-        
-        使用 `let` 時一旦重複宣告變數，**程式會直接報錯**，讓開發者立刻發現問題，**而不是默默覆蓋值，造成更難追的 bug**
-        
-- const
-    - 不可以重複宣告、重新賦值
-    - 實務上的用法：`const` 宣告的值不能再改變，這樣的特性適合拿來宣告定值
-        - 用一個日常的例子來說明 `const` 的用途的話，可以想成是，一週有七天，因此寫成
-        
-        ```jsx
-        const daysInWeek = 7;
-        ```
-        
-        這個規則是亙古不變的，所以適合用 const 來宣告
-        
-        另外 `const` 也增強易讀性，看到 `const`，就知道這是約定好不能動的值，之後不會也**不應該被重新賦值**
-        
-        ```jsx
-        const name = "Alice";
-        const name = "John"; // ❌ SyntaxError: Identifier 'name' has already been declared
-        ```
-        
-        ```jsx
-        const name = "Alice";
-        name = "John"; // ❌ TypeError: Assignment to constant variable.
-        ```
+#### const
+- 不可以重複宣告、重新賦值
+- 實務上的用法：`const` 宣告的值不能再改變，這樣的特性適合拿來宣告定值
+    - 用一個日常的例子來說明 `const` 的用途的話，可以想成是，一週有七天，因此寫成
+    
+    ```jsx
+    const daysInWeek = 7;
+    ```
+    
+    這個規則是亙古不變的，所以適合用 const 來宣告
+    
+    另外 `const` 也增強易讀性，看到 `const`，就知道這是約定好不能動的值，之後不會也**不應該被重新賦值**
+    
+    ```jsx
+    const name = "Alice";
+    const name = "John"; // ❌ SyntaxError: Identifier 'name' has already been declared
+    ```
+    
+    ```jsx
+    const name = "Alice";
+    name = "John"; // ❌ TypeError: Assignment to constant variable.
+    ```
         
 
 
@@ -329,7 +338,7 @@ let count = 1; // end of TDZ
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** work in progress…
+*{% post_link zh-tw/scope-hoist-shadowing %}*
 {% endcolorquote %}
 
 ## 為什麼 ES6 要推出 let, const？
@@ -356,23 +365,15 @@ let count = 1; // end of TDZ
 |  | var | let | const |
 | --- | --- | --- | --- |
 | 作用域 (Scope) | 函式作用域 (Function Scope) | 區塊作用域 (Block Scope) | 區塊作用域 (Block Scope) |
-| 重新宣告 | ✅ 可以重新宣告 | ❌ 不可以重新宣告
-`SyntaxError: Identifier 'x' has already been declared` | ❌ 不可以重新宣告
-`SyntaxError: Identifier 'x' has already been declared` |
-| 重新賦值 | ✅ 可以重新賦值 | ✅ 可以重新賦值 | ❌ 不可以重新賦值
-`TypeError: Assignment to constant variable` |
-| 提升 (Hoist) | ✅ 會提升 | ✅ 會提升（但會進入 TDZ
-`Reference Error: Cannot access before initialization` ） | ✅ 會提升（但會進入 TDZ
-`Reference Error: Cannot access before initialization` ） |
-| 初始值 (Initialization) | undefined | 無，賦值前無法取用 | 無，賦值前無法取用 |
+| 重新宣告 | ✅ 可以重新宣告 | ❌ 不可以重新宣告<br>`SyntaxError: Identifier 'x' has already been declared` | ❌ 不可以重新宣告<br>`SyntaxError: Identifier 'x' has already been declared` |
+| 重新賦值 | ✅ 可以重新賦值 | ✅ 可以重新賦值 | ❌ 不可以重新賦值<br>`TypeError: Assignment to constant variable` |
+| 提升 (Hoist) | ✅ 會提升 | ✅ 會提升（但會進入 TDZ`Reference Error: Cannot access before initialization` ） | ✅ 會提升（但會進入 TDZ`Reference Error: Cannot access before initialization` ） |
+| 初始值 (Initialization) | `undefined` | 無，賦值前無法取用 | 無，賦值前無法取用 |
 | 語法推出年份 | ES3（1999） | ES6 (2015) | ES6 (2015) |
 
 ## 參考資料
 
-https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/#:~:text=var%20and%20let%20create%20variables,use%20let%20or%20const%20instead
-
-https://realdennis.medium.com/%E6%87%B6%E4%BA%BA%E5%8C%85-javascript%E4%B8%AD-%E4%BD%BF%E7%94%A8let%E5%8F%96%E4%BB%A3var%E7%9A%843%E5%80%8B%E7%90%86%E7%94%B1-f11429793fcc
-
-https://www.explainthis.io/zh-hant/swe/js-var-let-const-in-javascript
-
-*《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
+- https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/#:~:text=var%20and%20let%20create%20variables,use%20let%20or%20const%20instead
+- https://realdennis.medium.com/%E6%87%B6%E4%BA%BA%E5%8C%85-javascript%E4%B8%AD-%E4%BD%BF%E7%94%A8let%E5%8F%96%E4%BB%A3var%E7%9A%843%E5%80%8B%E7%90%86%E7%94%B1-f11429793fcc
+- https://www.explainthis.io/zh-hant/swe/js-var-let-const-in-javascript
+- *《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
