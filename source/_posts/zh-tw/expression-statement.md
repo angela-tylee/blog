@@ -38,14 +38,11 @@ JavaScript （以及大部分的程式語言）的語法可依據是否回傳值
 
 陳述式 (statement) 則沒有回傳值，所以只會看到 console 回傳 `undefined` 
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ 
-
-</aside>
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？
+{% endcolorquote %}
 
 關於表達式 (expression) 和陳述式 (statement) 的差異再看一些 MDN 和 Wikipedia 上的敘述：
 
@@ -120,16 +117,13 @@ return (
 
 （後面會再寫幾篇與物件和一級函式 (first-class function) 相關的內容）
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式物件：**型別：型別的轉換 (Type Conversion) 與比較、真假值** 
+函式物件：**型別：型別的轉換 (Type Conversion) 與比較、真假值**
 
-一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式** 
-
-</aside>
+一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式**
+{% endcolorquote %}
 
 接下來就帶到函式表達式與函式陳述式的不同，先從基本語法結構來看：
 
@@ -187,9 +181,7 @@ greet();
 
 基於這樣的特點，函式表達式在執行到賦值的段落前不能呼叫
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **詞彙解釋**
 
 - **創造階段 (creation)：**
@@ -200,16 +192,13 @@ greet();
 - **執行階段 (execution)：**
     - **執行變數賦值**：在這個階段，賦值段落會被執行，變數會被賦予實際的值。
     - **執行函數呼叫**：函數會在執行階段運行
-</aside>
+{% endcolorquote %}
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** 
-
-</aside>
+**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+{% endcolorquote %}
 
 ### 具名 vs 匿名
 
@@ -249,14 +238,11 @@ greet();
 - **閉包（closure）**：用於建立作用域和保存狀態的情境，如迴圈內的變數保持。
 - **立即函式 (IIFE) 與模組化**
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式：封裝（好的封裝）、閉包 Counter II 
-
-</aside>
+函式：封裝（好的封裝）、閉包 Counter II
+{% endcolorquote %}
 
 最後補充一點：
 
@@ -264,16 +250,13 @@ greet();
 
 （翻閱 MDN 就會發現箭頭函式本來就是 “function expression”（函式表達式）的簡略寫法，而不是所有函式寫法的語法糖）
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**函式：一級函式、高階函式、回呼函式** 
+**函式：一級函式、高階函式、回呼函式**
 
-箭頭函式的引用原因、使用時機 
-
-</aside>
+箭頭函式的引用原因、使用時機
+{% endcolorquote %}
 
 ## 總結
 
@@ -281,15 +264,7 @@ greet();
 | --- | --- | --- |
 | 是否回傳值 | ✅ 會回傳值 | ❌ 不會回傳值 |
 | 功能 | 流程控制 | 計算出值 |
-| 語法 | • 執行函式
-• 純值
-• 變數
-• 運算子
-• 函式表達式
-（完整清單參考 MDN） | • 變數宣告 `var`、`let`、`const`
-• 流程控制（`if…else`, `switch`, `for loop`, `try…catch`)
-• import / export
-（完整清單可參考 MDN） |
+| 語法 | • 執行函式<br>• 純值<br>• 變數<br>• 運算子<br>• 函式表達式<br>（完整清單參考 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators)） | • 變數宣告 `var`、`let`、`const`<br>• 流程控制（`if…else`, `switch`, `for loop`, `try…catch`) <br>• import / export<br>（完整清單可參考 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)） |
 
 |  | 函式陳述式 (function statement) | 函式表達式 (function expression) |
 | --- | --- | --- |
@@ -297,8 +272,7 @@ greet();
 | 屬性 | 陳述式 (statement) | 表達式 (expression) |
 | 提升 | 全部提升，可以在任何地方呼叫 | 僅變數宣告部分提升，只能在函式宣告後呼叫 |
 | 具名 / 匿名 | 具名 | 具名 / 匿名皆可 |
-| 使用場景 | 除函式表達式適用的場景外，都可以使用函式陳述式 | 需要回傳值或閉包的地方
-以及作為回呼、匿名函式使用 |
+| 使用場景 | 除函式表達式適用的場景外，都可以使用函式陳述式 | 需要回傳值或閉包的地方，以及作為回呼、匿名函式使用 |
 
 ## 參考資料
 
@@ -308,4 +282,4 @@ https://en.wikipedia.org/wiki/Expression_(computer_science)
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
 
-*《帶你無痛提升 JavaScript 面試力》*Ch2
+《帶你無痛提升 JavaScript 面試力》Ch2

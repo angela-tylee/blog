@@ -38,14 +38,11 @@ tags:
 
  statement does not return values, so you will only see console return `undefined`. 
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ 
-
-</aside>
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？
+{% endcolorquote %}
 
  For more on the difference between expression and statement, see some of the MDN and Wikipedia descriptions:
 
@@ -107,16 +104,13 @@ return (
 
  (I'll write a few more articles about objects and first-class functions later.
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **References / Extended Reading**
 
- Function object: **型別：型別的轉換 (Type Conversion) 與比較、真假值** 
+ Function object: **型別：型別的轉換 (Type Conversion) 與比較、真假值**
 
- First-class function: **函式：一級函式、高階函式、回呼函式** 
-
-</aside>
+ First-class function: **函式：一級函式、高階函式、回呼函式**
+{% endcolorquote %}
 
  The next point is the difference between a function expression and a function statement. Let's start with the basic syntax structure:
 
@@ -174,9 +168,7 @@ greet();
 
  Due to this feature, a function expression cannot be called until it reaches the value of the given paragraph.
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **詞彙解釋**
 
 - **創造階段 (creation)：**
@@ -187,16 +179,13 @@ greet();
 - **執行階段 (execution)：**
     - **執行變數賦值**：在這個階段，賦值段落會被執行，變數會被賦予實際的值。
     - **執行函數呼叫**：函數會在執行階段運行
-</aside>
+{% endcolorquote %}
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**. 
-
-</aside>
+**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**.
+{% endcolorquote %}
 
 ### Named vs Anonymous
 
@@ -236,14 +225,11 @@ greet();
 - **Closure**: Used in the context of establishing scope and preserving state, such as variable holding in loops.
 - **Immediate Functions (IIFE) and Modularization**
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
-函式：封裝（好的封裝）、閉包 Counter II 
-
-</aside>
+函式：封裝（好的封裝）、閉包 Counter II
+{% endcolorquote %}
 
  One final note:
 
@@ -251,16 +237,13 @@ greet();
 
  (Read MDN to find out that Arrow Function is a shortened form of "function expression", not the syntactic sugar that all functions are written in.
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **References / Extended Reading**
 
-**函式：一級函式、高階函式、回呼函式** 
+**函式：一級函式、高階函式、回呼函式**
 
-箭頭函式的引用原因、使用時機 
-
-</aside>
+箭頭函式的引用原因、使用時機
+{% endcolorquote %}
 
 ## Conclusion
 

@@ -57,9 +57,7 @@ JavaScript 變數有三種宣告方式：var, let, const
 
 這樣更幫助我從根本更了解三者的差異及使用時機
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **小提示 / 補充知識**
 
 什麼是 **ES6?**
@@ -68,7 +66,7 @@ JavaScript 變數有三種宣告方式：var, let, const
 - **ES6**（也稱為 **ECMAScript 2015**）是 2015 年釋出的重大更新，帶來許多現代 JavaScript 的核心功能，例如：
 let / const 變數宣告、箭頭函式（arrow functions）、樣板字面值 (template literal)、解構（destructure）、模組（ESModules）、class、Promise、展開 / 其餘運算子（rest / spread operator)…等
 - ES6 推出功能之豐富、影響之深遠，大幅改善 JavaScript 開發體驗，使其至今仍被廣泛討論
-</aside>
+{% endcolorquote %}
 
 那麼以下說明 `var`、`let`、`const`有什麼差異：
 
@@ -125,17 +123,14 @@ let / const 變數宣告、箭頭函式（arrow functions）、樣板字面�
 - **賦值 (assign)**：在程式語言中，除了「宣告 (declare)」也有「賦值 (assign)」 的說法，差別在於，宣告僅宣稱了這個變數的存在，而這個變數的內容與值是什麼，則是透過賦值來達成
 {% endcolorquote %}
 
-
 ### 作用域 (Scope)
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** 
+*{% post_link zh-tw/scope-hoist-shadowing %}*
 
-</aside>
+{% endcolorquote %}
 
 #### var：全域、函式作用域
 
@@ -159,9 +154,7 @@ getData();
 console.log(a); // Uncaught ReferenceError: a is not defined
 ```
 
-<aside>
-<img src="/icons/warning_yellow.svg" alt="/icons/warning_yellow.svg" width="40px" />
-
+{% colorquote warning %}
 **注意**
 
 在全域以 `var` 宣告的變數，會被新增為全域物件 (global object) 的屬性 (property) （`let`、`const` 則不會）
@@ -176,17 +169,13 @@ console.log(window.b); // undefined
 const c = 123;
 console.log(window.c) // undefined
 ```
+{% endcolorquote %}
 
-</aside>
+{% colorquote glossary %}
+**詞彙解釋**
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
->**詞彙解釋**
-
->**全域物件 (global object)**：依環境而定，在瀏覽器環境是 `window` ；在 Node.js 環境是 `global`
-
-</aside>
+**全域物件 (global object)**：依環境而定，在瀏覽器環境是 `window` ；在 Node.js 環境是 `global`
+{% endcolorquote %}
 
 #### let、const：區塊作用域
 
@@ -194,14 +183,11 @@ console.log(window.c) // undefined
 
 例如：if, for loop, function 都包含區塊
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **小提示 / 補充知識**
 
 **區塊作用域 (Block Scope)** ：JavaScript 在 ES6 前只有函式作用域 (Function Scope)，區塊作用域是在 ES6 推出 `let` 與 `const` 才產生的概念，而不像其他程式語言（C / C++ / Python) ，從一開始便有區塊作用域的概念
-
-</aside>
+{% endcolorquote %}
 
 ```jsx
 var str = "";
@@ -255,9 +241,7 @@ console.log(y); // Output: undefined
 var y;
 ```
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **詞彙解釋**
 
 - **創造階段 (creation)：**
@@ -268,7 +252,7 @@ var y;
 - **執行階段 (execution)：**
     - **執行變數賦值**：在這個階段，賦值段落會被執行，變數會被賦予實際的值。
     - **執行函數呼叫**：函數會在執行階段運行
-</aside>
+{% endcolorquote %}
 
 #### ReferenceError: Cannot access before initialization
 
@@ -303,9 +287,7 @@ var y;
     ```
     
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **詞彙解釋**
 
 **TDZ (Temporary Dead Zone) 暫死區：**
@@ -342,17 +324,13 @@ if (!count) {
 }
 let count = 1; // end of TDZ
 ```
+{% endcolorquote %}
 
-</aside>
-
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
 **什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** work in progress…
-
-</aside>
+{% endcolorquote %}
 
 ## 為什麼 ES6 要推出 let, const？
 

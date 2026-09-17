@@ -106,16 +106,13 @@ fn2();
 
  Block Scope
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tips / Additional Knowledge**
 
  Before ES6, JavaScript's reliance on global variables and function scopes has been a major complaint.
 
  With the introduction of let and const in ES6, block scope was introduced to solve the problem of large variable scopes.
-
-</aside>
+{% endcolorquote %}
 
  Example:
 
@@ -151,14 +148,11 @@ console.log(x); // 3
     - Avoid accidental modification or overwriting of declared variables.
 - Helps memory management, when the use of a scope has ended (and it is not being used by a closure), the memory occupied by the variables inside it will be released.
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Extended reading**
 
  Closing: 函式：封裝（好的封裝）、閉包 Counter II *(work in progress)*...
-
-</aside>
+{% endcolorquote %}
 
 ## Hoisting
 
@@ -175,9 +169,7 @@ console.log(x); // 3
     - `let, const` are hoisted to the front of the block scope.
 - **Function Declarations**
 
-<aside>
-<img src="/icons/warning_yellow.svg" alt="/icons/warning_yellow.svg" width="40px" />
-
+{% colorquote warning %}
 **Note that**
 
  Only the declaration part of a variable is promoted, the assignment paragraph stays in place.
@@ -201,8 +193,7 @@ console.log(a); // undefined，宣告部分被提升了所以印不出值
 a = 'Hello'
 console.log(a); // 'Hello'
 ```
-
-</aside>
+{% endcolorquote %}
 
  Example: Elevation of a variable declaration
 
@@ -258,16 +249,13 @@ fn = function() {           // 函式表達式
 fn(); // '恩娣'
 ```
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Extended Reading**
 
-變數宣告以及 var, let, const 的差異 
+變數宣告以及 var, let, const 的差異
 
-表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式 
-
-</aside>
+表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
+{% endcolorquote %}
 
  See the Udacity explanatory video for a clear visual demonstration:
 
@@ -289,9 +277,7 @@ fn(); // '恩娣'
         - **Main procedures** can be **written in the front and detailed functions can be concentrated in the back**, realizing the writing mode of "read the outline first, then read the details", which is conducive to the structuring and maintenance of the code.
     - Reduces the difficulty of entry-level writing → Even if you don't fully understand the execution sequence, you can still write executable code, which is helpful for beginners to get started.
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **詞彙解釋**
 
 - **創造階段 (creation)：**
@@ -302,7 +288,7 @@ fn(); // '恩娣'
 - **執行階段 (execution)：**
     - **執行變數賦值**：在這個階段，賦值段落會被執行，變數會被賦予實際的值。
     - **執行函數呼叫**：函數會在執行階段運行
-</aside>
+{% endcolorquote %}
 
 ## Shadowing
 
@@ -372,9 +358,7 @@ fn2(); // 恩娣
 
  Syntactic scopes make programs more predictable, and it is easier to see how they will run when they are written.
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tips / Additional Knowledge**
 
  Lexical Scope is also known as Static Scope, as opposed to Dynamic Scope.
@@ -385,24 +369,19 @@ fn2(); // 恩娣
 | --- | --- | --- |
 |  Variable parsing method |  Based on code structure |  Call stack according to execution phase |
 |  Languages used |  JavaScript, Python, Java, C, Rust, etc. |  LaTeX and the shell languages bash, dash |
-</aside>
+{% endcolorquote %}
 
 ## TDZ (Temporal Dead Zone)
 
  Temporal Dead Zone only applies to `let`, `const` declared variables.
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **References / Extended Reading**
 
-變數宣告以及 var, let, const 的差異 
+變數宣告以及 var, let, const 的差異
+{% endcolorquote %}
 
-</aside>
-
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **詞彙解釋**
 
 **TDZ (Temporary Dead Zone) 暫死區：**
@@ -439,8 +418,7 @@ if (!count) {
 }
 let count = 1; // end of TDZ
 ```
-
-</aside>
+{% endcolorquote %}
 
 ## Conclusion
 

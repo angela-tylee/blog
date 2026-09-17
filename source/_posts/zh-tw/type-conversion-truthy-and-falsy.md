@@ -25,14 +25,11 @@ JavaScript 共有 8 種型別：7 個原始型別 (primitive data type)、1 個�
     - array
     - function
     
-    <aside>
-    <img src="/icons/warning_yellow.svg" alt="/icons/warning_yellow.svg" width="40px" />
-    
-    **注意 / 提示 / 陷阱**
-    
-    常見的資料結構如 `array`、`function` ，只要不是原始型別，都屬於物件型別
-    
-    </aside>
+{% colorquote warning %}
+**注意 / 提示 / 陷阱**
+
+常見的資料結構如 `array`、`function` ，只要不是原始型別，都屬於物件型別
+{% endcolorquote %}
     
 
 | 特徵 | 原始型別 (Primitive) [[^2]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21) | 物件型別 (Object) |
@@ -56,29 +53,23 @@ typeof [1, 2, 3].        // 'object'
 Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 ```
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **小提示 / 補充知識**
 
 `typeof` 可以回傳的值有：
 
 ‘undefined’、‘boolean’、‘string’、‘number’、‘bigint’、‘symbol’、‘object’、**‘function’ [[^1]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21)**
-
-</aside>
+{% endcolorquote %}
 
 ## 型別轉換 (Type Conversion / Type Coercion)
 
 眾所皆知，JavaScript 是一個弱型別 (loosely typed) 語言，宣告時不用指定變數的型別、能在後續自由更換型別，JavaScript 也會在編譯的過程中依據需求「自行」轉換型別（什麼鬼？！）
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** 
-
-</aside>
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+{% endcolorquote %}
 
 好處是撰寫時很方便又快速，省去許多麻煩；壞處就是如果沒有搞懂轉換的規則，就容易遇到非預期的錯誤
 
@@ -89,22 +80,19 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 - 顯性轉換 (explicit coercion)：開發者自主進行的型別轉換
 - 隱性轉換 (implicit coercion)：JavaScript 在編譯過程中進行的型別轉換
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **小提示 / 補充知識**
 
 根據 MDN：
 
 - **Type Conversion** 一詞包含隱性及顯性轉換的意思
 - **Type Coercion** 則更貼近於描述隱性轉換 **(implicit coercion)** = 由 JS 進行型別轉換而非開發者主動進行的轉換
-    
+
     因此嚴格來說並不應該有 “explicit” coercion 的說法
-    
+
 
 不過學界普遍已習慣以 “implicit coercion”、”explicit coercion” 來指稱隱性轉換及顯性轉換，因此此文也依照這樣的慣例撰寫
-
-</aside>
+{% endcolorquote %}
 
 ### 顯性轉換 (Explicit Coercion)
 
@@ -163,16 +151,13 @@ temp = null;                    // 丟棄物件型別
 
 Primitive Wrapper 是 JavaScript 中為了讓原始型別也能具備物件行為而設計的機制，這充分體現了 JavaScript 中 OOP (object-oriented programming) 的概念
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **小提示 / 補充知識**
 
 **OOP, object-oriented programming（物件導向程式設計）**：
 
 指的便是將物件作為程式的基本單元，將資料（值）和操作該資料的行為（方法）封裝其中，以提高軟體的重用性、靈活性和擴充性 [[^6]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21)
-
-</aside>
+{% endcolorquote %}
 
 ### 隱性轉換 (Implicit Coercion)
 
@@ -227,18 +212,15 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 `Object.entries({a: 1})` → `[["a", 1]]` |
 | 類陣列 / NodeList → Array | `Array.from()`, `spread...` |  |
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
 類陣列：
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes 
-
-</aside>
+DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+{% endcolorquote %}
 
 ## 型別比較
 
@@ -283,14 +265,11 @@ null === undefined // false：型別不同
     ```
     
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-Call by Sharing：物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？） 
-
-</aside>
+Call by Sharing：物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+{% endcolorquote %}
 
 - `null`、`undefined`、`NaN`
     - `NaN` 無法和任何值相等，包含他自己
@@ -321,14 +300,11 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 | **`0`** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | **`false`** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-is not defined、undefined、NAN、null 
-
-</aside>
+is not defined、undefined、NAN、null
+{% endcolorquote %}
 
 ## 真值、假值
 
@@ -347,14 +323,11 @@ Boolean([])             // true，因此是否為空陣列通常是以 [].length
 Boolean(function(){})   // true
 ```
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-三元運算子、II && 運算子 **Operators 運算子：Prefix & Postfix、&& ||** 
-
-</aside>
+三元運算子、II && 運算子 **Operators 運算子：Prefix & Postfix、&& ||**
+{% endcolorquote %}
 
 ## 總結
 

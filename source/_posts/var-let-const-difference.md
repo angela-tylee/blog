@@ -34,16 +34,13 @@ let John = {
 const res = await fetch(url);
 ```
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **Glossary**
 
 What is meant by "return"?
 
 看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ work in progress...
-
-</aside>
+{% endcolorquote %}
 
  Since DRY (Do not repeat yourself) is a very basic principle when writing code, storing values in variables is pretty much the way to start writing JavaScript!
 
@@ -62,9 +59,7 @@ What is meant by "return"?
 
  This helps me to understand the differences between the three and when to use them.
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tips / Additional Knowledge**
 
  What is **ES6?**
@@ -72,7 +67,7 @@ What is meant by "return"?
 - The JavaScript standard is managed centrally by **the ECMA**, and new syntax features are released about once a year. The official name of this standard specification is **ECMAScript (or ES for short)**.
 - **ES6** (also known as **ECMAScript 2015** ) is a major update released in 2015 that brings many of the core features of modern JavaScript, such as: let / const variable declarations, arrow functions, template literals, destructures, modules, and more. destructure, ESModules, class, Promise, rest/spread operator... etc.
 - ES6 is still widely discussed today because of its richness of functionality and far-reaching impact on improving the JavaScript development experience.
-</aside>
+{% endcolorquote %}
 
  So here are the differences between `var`, `let`, and `const`:
 
@@ -121,25 +116,20 @@ What is meant by "return"?
         ```
         
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **Glossary**
 
 - **declare:** In programming, **declare** means to "tell the computer that I want to use a variable or constant", i.e., **to reserve a memory space** so that the name of the variable can be used later, when the value of the variable may not have been specified yet.
 - **assign:** In program language, besides "declare", there is also "assign", the difference is that declare only declares the existence of the variable, and what the content and value of the variable are is achieved by assigning the value.
-</aside>
+{% endcolorquote %}
 
 ### Scope
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** 
-
-</aside>
+**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+{% endcolorquote %}
 
 #### var: Full Scope, Function Scope
 
@@ -163,9 +153,7 @@ getData();
 console.log(a); // Uncaught ReferenceError: a is not defined
 ```
 
-<aside>
-<img src="/icons/warning_yellow.svg" alt="/icons/warning_yellow.svg" width="40px" />
-
+{% colorquote warning %}
 **Note that**
 
  A variable declared as `var` in the global scope is added as a property of the global object  ( `let`, `const` are not).
@@ -180,17 +168,13 @@ console.log(window.b); // undefined
 const c = 123;
 console.log(window.c) // undefined
 ```
+{% endcolorquote %}
 
-</aside>
-
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **Glossary**
 
 **global object:** depends on the environment, `window` in a browser environment, `global in` a Node.js environment.
-
-</aside>
+{% endcolorquote %}
 
 #### let, const: block scope
 
@@ -202,14 +186,11 @@ console.log(window.c) // undefined
 
 !block-scope-for-loop.png
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tips / Supplementary Knowledge**
 
 **Block Scope**: JavaScript only had Function Scope before ES6, the concept of Block Scope was introduced in ES6 with the introduction of `let` and `const`, unlike other programming languages (C / C++ / Python) where the concept of Block Scope has been around since the beginning.
-
-</aside>
+{% endcolorquote %}
 
 ```jsx
 var str = "";
@@ -265,9 +246,7 @@ console.log(y); // Output: undefined
 var y;
 ```
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **Glossary**
 
 - **Creation:**
@@ -276,7 +255,7 @@ var y;
 - **Execution:**
     - **Execute variable assignment**: In this phase, the assignment paragraph is executed and the variable is given its actual value.
     - **Execute function call**: The actual code of the function is run during the execution phase.
-</aside>
+{% endcolorquote %}
 
 #### ReferenceError: Cannot access before initialization
 
@@ -311,9 +290,7 @@ var y;
     ```
     
 
-<aside>
-<img src="/icons/help-alternate_pink.svg" alt="/icons/help-alternate_pink.svg" width="40px" />
-
+{% colorquote glossary %}
 **Glossary**
 
 **TDZ (Temporary Dead Zone) A temporary dead zone:**
@@ -350,17 +327,13 @@ if (!count) {
 }
 let count = 1; // end of TDZ
 ```
+{% endcolorquote %}
 
-</aside>
-
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
 **什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** work in progress...
-
-</aside>
+{% endcolorquote %}
 
 ## Why did ES6 introduce let, const?
 

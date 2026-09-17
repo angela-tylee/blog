@@ -249,16 +249,13 @@ const obj = {
 }
 ```
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-靜態作用域：**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** 
+靜態作用域：**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
 
-箭頭函式：箭頭函式的引用原因、使用時機 
-
-</aside>
+箭頭函式：箭頭函式的引用原因、使用時機
+{% endcolorquote %}
 
 ### 明確綁定 / 顯式綁定 (Explicit Binding) ：Call, Apply, Bind
 

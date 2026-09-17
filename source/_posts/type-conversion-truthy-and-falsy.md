@@ -25,14 +25,11 @@ tags:
     - Data Type object
     - function
     
-    <aside>
-    <img src="/icons/warning_yellow.svg" alt="/icons/warning_yellow.svg" width="40px" />
-    
-    **Notes / Tips / Pitfalls**
-    
-     Common data structures such as `array` and `function` are object types as long as they are not primitive types.
-    
-    </aside>
+{% colorquote warning %}
+**Notes / Tips / Pitfalls**
+
+ Common data structures such as `array` and `function` are object types as long as they are not primitive types.
+{% endcolorquote %}
     
 
 |  Characteristics |  Primitive [[^2]](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21) |  Object |
@@ -56,29 +53,23 @@ typeof [1, 2, 3].        // 'object'
 Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 ```
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tip / Additional Knowledge**
 
  The values that can be returned by `typeof` are:
 
  'undefined', 'boolean', 'string', 'number ', 'bigint', 'symbol', 'object', 'function' [ **^1]. function' [[^1].](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21)**
-
-</aside>
+{% endcolorquote %}
 
 ## Type Conversion / Type Coercion
 
  As we all know, JavaScript is a loosely typed language, you don't need to specify the type of the variable when you declare it, you can change the type freely later, and JavaScript will convert the type "by itself" during compilation (what the hell?!).
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **References / Extended Reading**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** 
-
-</aside>
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+{% endcolorquote %}
 
  The advantage is that it's easy and fast to write, and saves a lot of trouble; the disadvantage is that if you don't understand the conversion rules, you're likely to encounter unintended errors!
 
@@ -89,22 +80,19 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 - explicit coercion: developer-initiated type conversions
 - implicit coercion: type conversion done by JavaScript during compilation.
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tips / Additional Knowledge**
 
  According to MDN:
 
 - The term **Type Conversion** encompasses both implicit and explicit conversions.
 - **Type Coercion** more closely describes implicit  **coercion**  = type conversion by JS rather than by the developer.
-    
+
      So strictly speaking, there should be no such thing as "explicit" coercion.
-    
+
 
  However, it is a common practice in the academic world to use "implicit coercion" and "explicit coercion" to refer to implicit and explicit coercion, so this article follows such a convention
-
-</aside>
+{% endcolorquote %}
 
 ### Explicit Coercion
 
@@ -148,16 +136,13 @@ temp = null;                    // 丟棄物件型別
 
  Primitive Wrapper is a mechanism in JavaScript designed to allow primitive types to have object behavior, which fully embodies the concept of OOP (object-oriented programming) in JavaScript.
 
-<aside>
-<img src="/icons/info-alternate_purple.svg" alt="/icons/info-alternate_purple.svg" width="40px" />
-
+{% colorquote tips %}
 **Tips / Supplementary Knowledge**
 
 **OOP, object-oriented programming**:
 
  This refers to the use of objects as the basic units of a program, encapsulating data (values) and behaviors (methods) that manipulate that data, in order to increase the reusability, flexibility, and extensibility of the software [[^6].](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21)
-
-</aside>
+{% endcolorquote %}
 
 ### Implicit Coercion
 
@@ -208,18 +193,15 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 |  Object → Array | `Object.keys()Object.value()Object.entries()` | `Object.keys({a: 1, b: 2})` → `["a", "b"]Object.values({a: 1, b: 2})` → `[1, 2]Object.entries({a: 1})` → `[["a", 1]]` |
 |  Arrays / NodeList → Array | `Array.from()`, `spread...` |  |
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
  Array of classes:
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes 
-
-</aside>
+DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+{% endcolorquote %}
 
 ## Type Comparison
 
@@ -264,14 +246,11 @@ null === undefined // false：型別不同
     ```
     
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **References / Extended Reading**
 
- Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？） 
-
-</aside>
+ Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+{% endcolorquote %}
 
 - `null`, `undefined`, `NaN`
     - `NaN` cannot be equal to any value, including itself.
@@ -302,14 +281,11 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 | **`0`** |  ❌ |  ✅ |  ❌ |  ✅ |  ✅ |  ✅ |
 | **`false`** |  ✅ |  false |  ✅ |  ✅ |  ✅ |  ✅ |
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
-is not defined、undefined、NAN、null 
-
-</aside>
+is not defined、undefined、NAN、null
+{% endcolorquote %}
 
 ## True, False
 
@@ -328,14 +304,11 @@ Boolean([])             // true，因此是否為空陣列通常是以 [].length
 Boolean(function(){})   // true
 ```
 
-<aside>
-<img src="/icons/book-closed_blue.svg" alt="/icons/book-closed_blue.svg" width="40px" />
-
+{% colorquote info %}
 **Reference / Extended Reading**
 
- Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||** 
-
-</aside>
+ Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||**
+{% endcolorquote %}
 
 ## Summary
 
