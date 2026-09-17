@@ -29,6 +29,174 @@ pnpm build      # generate static site into public/
 pnpm clean      # clear cache (db.json) and public/
 ```
 
+## Writing posts
+
+Beyond plain markdown, the theme styles a handful of blocks that are easy to forget
+exist. Everything below works today with no configuration.
+
+### Front-matter
+
+| Key | Effect |
+| --- | --- |
+| `title`, `date`, `categories`, `tags` | The usual. |
+| `<!-- more -->` (in the body) | Truncates the post on the home page and adds a "Read more" link. Without it, the full body is rendered on the index. |
+| `excerpt` | Explicit index summary, as an alternative to `<!-- more -->`. |
+| `updated` | Shows a second date alongside the original. Requires `article.date_format: full_relative` in [_config.minos.yml](_config.minos.yml). |
+| `link` | Link post — the title points at an external URL instead of the permalink. |
+| `hidden` | Unlisted. See [Retiring a post](#retiring-a-post). |
+
+LaTeX also renders — MathJax is enabled under `plugins` in
+[_config.minos.yml](_config.minos.yml).
+
+Reference: [Hexo - Variables](https://hexo.io/docs/variables)
+
+### Callouts
+
+Reference: [Hexo - Tag Plugin](https://hexo.io/docs/tag-plugins)
+
+Four colored callout types, each with an icon badge on the left border:
+
+```
+{% colorquote warning %}
+Hooks must not be called conditionally.
+{% endcolorquote %}
+```
+
+| Type | Color | Icon |
+| --- | --- | --- |
+| `info` | blue | i |
+| `success` | green | check |
+| `warning` | yellow | question mark |
+| `danger` | red | exclamation mark |
+
+Markdown works inside the block. This is the theme's own `colorquote` tag, registered
+in [themes/minos/scripts/99_tags.js](themes/minos/scripts/99_tags.js) and styled in
+[themes/minos/source/css/style.scss](themes/minos/source/css/style.scss).
+
+In VSCode, insert one with **Cmd+Shift+P → Insert Snippet**, or type `cq` / `cqinfo` /
+`cqwarning` / `cqsuccess` / `cqdanger` followed by Tab. Selecting text first wraps it
+rather than replacing it. The snippets live in
+[.vscode/blog.code-snippets](.vscode/blog.code-snippets) and are committed, so they
+follow the repo. They deliberately carry no `scope` key — scoping them to `markdown`
+stopped them appearing in the snippet picker at all.
+
+![screenshot](source/images/callout-preview.png)
+
+### Pullquote
+
+Floats right at half width, with a faded quotation-mark watermark, and collapses to
+full width below 768px:
+
+```
+{% pullquote %}
+The sentence worth pulling out beside the body text.
+{% endpullquote %}
+```
+
+### Blockquote with attribution
+
+The theme styles a `footer cite` inside a blockquote with an em-dash prefix. Plain
+`>` markdown cannot produce that — use Hexo's built-in tag:
+
+```
+{% blockquote Dan Abramov, Overreacted %}
+Effects are an escape hatch.
+{% endblockquote %}
+```
+
+### Linking to another post
+
+Reference: [Hexo - Tag Plugins § Include Posts](https://hexo.io/docs/tag-plugins#Include-Posts)
+
+Don't hand-write the URL. Use the built-in tag, which resolves the href through
+`url_for` (so the `/blog/` root is applied for you) and **throws at build time** if the
+post no longer exists — a rename fails `pnpm build` instead of shipping a dead link:
+
+```
+{% post_link var-let-const-difference %}
+{% post_link zh-tw/var-let-const-difference %}
+```
+
+With no second argument the link text is the target's front-matter `title`, which keeps
+the two in sync. Overrides and extras:
+
+| Form | Effect |
+| --- | --- |
+| `{% post_link <slug> 自訂文字 %}` | Custom link text. Trailing words are joined with spaces — no quoting needed. |
+| `{% post_link <slug>#作用域-Scope %}` | Deep-link a heading. The anchor is the slugified heading, as generated in the built HTML. |
+| `{% post_link <slug> <text> false %}` | Disable HTML-escaping of the text, for a title containing markup. |
+| `{% post_path <slug> %}` | The bare URL, with no `<a>` wrapper. |
+
+**The slug includes the language folder.** The upstream docs say folder information can
+be omitted; that is not true here on Hexo v8.1.2 — [post_link.js](node_modules/hexo/dist/plugins/tag/post_link.js)
+does an exact `Post.findOne({ slug })`, and because `new_post_name: :title.md` compiles
+`:title` to a pattern that matches across `/`, a post at `source/_posts/zh-tw/foo.md`
+has the slug `zh-tw/foo`. Writing `{% post_link foo %}` from a Chinese post silently
+resolves to the *English* post of the same name, and every post here exists under both.
+
+Nesting inside a callout works — the inner tag is expanded before the block's markdown
+is rendered:
+
+```
+{% colorquote info %}
+**延伸閱讀**
+
+{% post_link zh-tw/scope-hoist-shadowing %}
+{% endcolorquote %}
+```
+
+Because the two languages are separate sites, cross-linking zh-tw → en is possible but
+usually not what you want.
+
+### Images
+
+Put image files in `source/images/` — anything under `source/` not prefixed with `_`
+is copied to `public/` as-is. Reference them root-relative:
+
+```markdown
+![The effect cleanup order](/images/react-lifecycle.png)
+```
+
+Write `/images/…`, never `/blog/images/…`. The site root is `/blog/` (derived from
+`url:` in [_config.yml](_config.yml)) and hexo-renderer-marked prepends it
+automatically; hardcoding it yields `/blog/blog/`.
+
+Every image in a post is automatically wrapped in a lightbox link, with its **alt text
+used as a hover caption** — no extra syntax. The caption is hover-only, so it will not
+appear on touch devices; never put essential information there alone. Opt a single
+image out with `{.not-gallery-item}`.
+
+For several images as a justified grid, wrap them by hand — the blank lines matter,
+as they keep the images parsed as markdown:
+
+```html
+<div class="justified-gallery">
+
+![First](/images/a.png)
+![Second](/images/b.png)
+
+</div>
+```
+
+To use a separate thumbnail and full-size image, supply your own link and keep the
+`gallery-item` class:
+
+```html
+<a class="gallery-item" href="/images/diagram-full.png">
+  <img src="/images/diagram-thumb.png">
+</a>
+```
+
+### Escaping template syntax
+
+Writing about Hexo or Nunjucks means writing literal `{%` in a post, which Hexo will
+otherwise try to execute. Wrap it:
+
+```
+<escape>{% colorquote info %}</escape>
+```
+
+
 ## Retiring a post
 
 Two ways to take a published post out of circulation, depending on whether its URL
