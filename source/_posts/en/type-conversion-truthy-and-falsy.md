@@ -5,7 +5,7 @@ categories: Technology
 tags:
 ---
 
-## 8 Types
+## JavaScript has 8 Data Types
 
  JavaScript has 8 types: 7 primitive data types and 1 object data type.
 
@@ -43,7 +43,7 @@ tags:
 
 !image.png
 
-### Pitfalls of`typeof`
+### Pitfalls of `typeof`
 
 ```jsx
 typeof null              // 'object'，`null` 屬於原始型別，但是會回傳 'object'

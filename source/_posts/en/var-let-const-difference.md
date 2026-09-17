@@ -2,7 +2,7 @@
 title: Variable declaration and the difference between var, let, const
 date: 2025-04-13 11:00:00
 categories: Technology
-tags:
+tags: ['javascript', 'beginner']
 ---
 
 The first article is dedicated to the basics of the basics: variable declaration and the difference between var, let, and const.
