@@ -1,0 +1,7 @@
+---
+title: Page not found
+layout: 404
+permalink: 404.html
+indexing: false
+comments: false
+---
