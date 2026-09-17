@@ -271,30 +271,53 @@ Theme settings belong in `_config.minos.yml` at the repo root, **not** in
 over the theme's own config, and the theme repo gitignores its internal
 `_config.yml` — anything written there is untracked and will be lost.
 
-## Updating the theme
+## Changing the theme
+
+[themes/minos](themes/minos) is a fork — [angela-tylee/hexo-theme-minos-clone](https://github.com/angela-tylee/hexo-theme-minos-clone),
+tracking the `develop` branch. Upstream ([ppoffice/hexo-theme-minos](https://github.com/ppoffice/hexo-theme-minos))
+is **publicly archived**, so there are no upstream updates to pull and no PRs to send.
+The fork is simply owned code: edit it when the theme needs changing, and judge the
+edit on whether it is right for this blog rather than on whether it would be accepted
+upstream.
+
+The blog repo records only the theme's commit SHA, so a theme edit is two commits:
 
 ```bash
 cd themes/minos
-git pull origin master
+git add <files> && git commit -m "fix: ..."
+git push origin develop
 cd ../..
-git add themes/minos && git commit -m "chore: update minos theme"
+git add themes/minos && git commit -m "chore: bump minos theme"
 ```
 
-The blog repo records only the theme's commit SHA, so the theme bump must be
-committed here as well.
+Skip the `git push` and the blog will point at a SHA that exists only on your machine —
+a fresh clone or a CI build cannot resolve it and the site will not build.
+
+Check the submodule's state before committing the bump, since it is easy to carry along
+work you did not mean to ship:
+
+```bash
+git -C themes/minos status
+git -C themes/minos log --oneline origin/develop..HEAD   # unpushed commits
+```
+
+Theme *settings* are not a theme edit — they live in
+[_config.minos.yml](_config.minos.yml) at the repo root and need no submodule commit.
+See [Configuration](#configuration).
 
 ## Continue Improvements
 
-- Add Table of Contents for each page.
-- Add last updated time.
-- Add 404 page.
-- Add multi-language support.
-  - [.scratch/multi-language-plan.md](.scratch/multi-language-plan.md)
-  - [利用 Hexo 來建立一個 多語系 部落格](https://medium.com/learn-or-die/%E5%88%A9%E7%94%A8-hexo-%E4%BE%86%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-%E5%A4%9A%E8%AA%9E%E7%B3%BB-%E9%83%A8%E8%90%BD%E6%A0%BC-4545cc6cdb6)
-  - Nav menu default to en sites path.
-- Add 'share this' button. [.scratch/sharethis-plan.md](.scratch/sharethis-plan.md)
-- Add 'Comment' section
-- Add colorquote and VSCode shortcut
-- Change to custom domain
-- Add favicon
-- Github Issue Tracker
+- [ ] Add Table of Contents for each page.
+- [ ] Add last updated time.
+- [x] Add 404 page.
+- [x] Add multi-language support.
+  - [ ] [.scratch/multi-language-plan.md](.scratch/multi-language-plan.md)
+    - [利用 Hexo 來建立一個 多語系 部落格](https://medium.com/learn-or-die/%E5%88%A9%E7%94%A8-hexo-%E4%BE%86%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-%E5%A4%9A%E8%AA%9E%E7%B3%BB-%E9%83%A8%E8%90%BD%E6%A0%BC-4545cc6cdb6)
+  - [ ] Nav menu default to en sites path.
+- [ ] Add 'share this' button. [.scratch/sharethis-plan.md](.scratch/sharethis-plan.md)
+- [ ] Add 'Comment' section
+- [x] Add colorquote and VSCode shortcut (on local keybinding)
+- [ ] Change to custom domain
+- [ ] Add favicon
+- [ ] Github Issue Tracker
+- [ ] Vender themes/minos as direct folder or keep it submodule
