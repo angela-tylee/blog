@@ -29,7 +29,19 @@ pnpm build      # generate static site into public/
 pnpm clean      # clear cache (db.json) and public/
 ```
 
+## Commands
+
+[Commands | Hexo](https://hexo.io/docs/commands)
+
+`hexo new --path <scaffold/lang/file-name> "Post Title"`
+
+## Variables
+
+[Variables | Hexo](https://hexo.io/docs/variables)
+
 ## Writing posts
+
+[Tag Plugins | Hexo](https://hexo.io/docs/tag-plugins)
 
 Beyond plain markdown, the theme styles a handful of blocks that are easy to forget
 exist. Everything below works today with no configuration.
@@ -309,7 +321,7 @@ See [Configuration](#configuration).
 
 - [ ] Add Table of Contents for each page.
 - [ ] Add last updated time.
-- [x] Add 404 page.
+- [ ] Add 404 page.
 - [x] Add multi-language support.
   - [ ] [.scratch/multi-language-plan.md](.scratch/multi-language-plan.md)
     - [利用 Hexo 來建立一個 多語系 部落格](https://medium.com/learn-or-die/%E5%88%A9%E7%94%A8-hexo-%E4%BE%86%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-%E5%A4%9A%E8%AA%9E%E7%B3%BB-%E9%83%A8%E8%90%BD%E6%A0%BC-4545cc6cdb6)
@@ -321,3 +333,5 @@ See [Configuration](#configuration).
 - [ ] Add favicon
 - [ ] Github Issue Tracker
 - [ ] Vender themes/minos as direct folder or keep it submodule
+- [ ] Sass `legacy-js-api` warning -> swap to hexo-renderer-dartsass
+- [ ] add `updated` date https://hexo.io/docs/variables
