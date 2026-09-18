@@ -21,6 +21,33 @@ const { createRequire } = require('module');
 const fs = require('fs');
 const fm = createRequire(require.resolve('hexo'))('hexo-front-matter');
 
+/**
+ * Drops `excerpt` from a published post when it is blank.
+ *
+ * This has to run on the file hexo just wrote, not on the data we hand to
+ * `post.create()`: scaffolds/post.md carries its own `excerpt: ''`, and
+ * `_renderScaffold` deep-merges our data onto the parsed scaffold -- a merge
+ * can add or override a key, never remove one. Re-stringifying is safe because
+ * hexo wrote that front matter with hexo-front-matter's own stringify, so the
+ * remaining keys round-trip unchanged.
+ */
+function stripEmptyExcerpt(path) {
+  const raw = fs.readFileSync(path, 'utf8');
+  const post = fm.parse(raw);
+  if (typeof post.excerpt !== 'string' || post.excerpt.trim()) return;
+
+  delete post.excerpt;
+
+  // stringify() drops the opening separator unless asked for it, so carry over
+  // what the file actually opened with, the way hexo's _renderScaffold does.
+  const { separator, prefixSeparator } = fm.split(raw);
+  fs.writeFileSync(path, fm.stringify(post, {
+    separator,
+    prefixSeparator,
+    mode: separator.startsWith(';') ? 'json' : ''
+  }));
+}
+
 hexo.extend.console.register('publish', 'Moves a draft to posts, preserving its language subfolder', {
   usage: '<path>',
   arguments: [
@@ -50,6 +77,7 @@ hexo.extend.console.register('publish', 'Moves a draft to posts, preserving its 
 
   return this.post.create(data, args.r || args.replace).then(post => {
     fs.unlinkSync(src);
+    stripEmptyExcerpt(post.path);
     this.log.info('Published: %s', post.path);
   });
 });
