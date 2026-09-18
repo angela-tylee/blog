@@ -29,7 +29,19 @@ pnpm build      # generate static site into public/
 pnpm clean      # clear cache (db.json) and public/
 ```
 
+## Commands
+
+[Commands | Hexo](https://hexo.io/docs/commands)
+
+`hexo new --path <scaffold/lang/file-name> "Post Title"`
+
+## Variables
+
+[Variables | Hexo](https://hexo.io/docs/variables)
+
 ## Writing posts
+
+[Tag Plugins | Hexo](https://hexo.io/docs/tag-plugins)
 
 Beyond plain markdown, the theme styles a handful of blocks that are easy to forget
 exist. Everything below works today with no configuration.
