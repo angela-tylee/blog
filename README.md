@@ -344,3 +344,4 @@ See [Configuration](#configuration).
 - [ ] Vender themes/minos as direct folder or keep it submodule
 - [ ] Sass `legacy-js-api` warning -> swap to hexo-renderer-dartsass
 - [ ] add `updated` date https://hexo.io/docs/variables
+- [ ] image storage
