@@ -95,12 +95,12 @@ fn2();
 - 區塊作用域 (Block Scope)：`let`、`const` 宣告的變數
 
 函式作用域：
-![](../../images/function-scope.png)
+![](./images/function-scope.png)
 
 區塊作用域：
 
-![](../../images/block-scope.png)
-![](../../images/block-scope-for-loop.png)
+![](./images/block-scope.png)
+![](./images/block-scope-for-loop.png)
 
 {% colorquote tips %}
 **小提示 / 補充知識**
@@ -170,7 +170,7 @@ JavaScript 並沒有一個固定做變數宣告的區域，你可以在任何地
 
 只有變數宣告 (declaration) 部分會提升，賦值 (assignment) 段落會留在原地
 
-![](../../images/variable-declaration-assignment.png)
+![](./images/variable-declaration-assignment.png)
 
 範例：
 

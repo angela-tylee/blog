@@ -95,12 +95,12 @@ fn2();
 - Block Scope: `let`, `const` declared variables
 
 Function Scope:
-![](../../images/function-scope.png)
+![](./images/function-scope.png)
 
 Block Scope:
 
-![](../../images/block-scope.png)
-![](../../images/block-scope-for-loop.png)
+![](./images/block-scope.png)
+![](./images/block-scope-for-loop.png)
 
 {% colorquote tips %}
 **Tips / Additional Knowledge**
@@ -170,7 +170,7 @@ console.log(x); // 3
 
  Only the declaration part of a variable is promoted, the assignment paragraph stays in place.
 
-![](../../images/variable-declaration-assignment.png)
+![](./images/variable-declaration-assignment.png)
 
  Example:
 
