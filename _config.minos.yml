@@ -35,8 +35,13 @@ menu:
 search:
   type: insight
 
-# Navigation bar toc settings
-toc: true
+# Table of contents settings: navbar | sidebar | both | false
+toc: both
+
+# Which side the toc sidebar floats on: left or right (default: right).
+# Handy if you're also adding a profile/recommended-articles panel on the
+# other side.
+toc_position: right
 
 # Share plugin settings.
 # Disabled: the theme only ships third-party providers (sharethis / addthis),
