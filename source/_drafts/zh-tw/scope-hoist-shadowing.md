@@ -94,17 +94,13 @@ fn2();
 - 函式作用域 (Function Scope)：`var`  宣告的變數
 - 區塊作用域 (Block Scope)：`let`、`const` 宣告的變數
 
-!函式作用域
+函式作用域：
+![](../../images/function-scope.png)
 
-函式作用域
+區塊作用域：
 
-!區塊作用域
-
-區塊作用域
-
-!區塊作用域
-
-區塊作用域
+![](../../images/block-scope.png)
+![](../../images/block-scope-for-loop.png)
 
 {% colorquote tips %}
 **小提示 / 補充知識**
@@ -174,7 +170,7 @@ JavaScript 並沒有一個固定做變數宣告的區域，你可以在任何地
 
 只有變數宣告 (declaration) 部分會提升，賦值 (assignment) 段落會留在原地
 
-!variable-declaration-assignment.png
+![](../../images/variable-declaration-assignment.png)
 
 範例：
 
@@ -259,9 +255,8 @@ fn(); // '恩娣'
 
 可參考 Udacity 說明影片，有清楚的視覺演示：
 
-Source: [Intro to JavaScript | Udacity](https://youtu.be/8z-HSS34dsM)
-
-Source: Intro to JavaScript | Udacity
+<!-- {% iframe https://www.youtube.com/embed/8z-HSS34dsM 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="400" height="300" allowfullscreen></iframe>
 
 ### 為什麼要有提升的設計？
 
