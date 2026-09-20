@@ -219,6 +219,25 @@ To use a separate thumbnail and full-size image, supply your own link and keep t
 </a>
 ```
 
+### Videos (iframe)
+
+Reference: [Hexo - Tag Plugins § Iframe](https://hexo.io/docs/tag-plugins#Iframe)
+
+Hexo's built-in tag:
+
+```
+{% iframe https://www.youtube.com/embed/VIDEO_ID 600 400 %}
+```
+
+renders to a plain `<iframe>`. Drafts converted from Notion/Obsidian keep that tag
+as a commented-out reference next to a hand-written `<iframe>` with the same
+`src`/size, since the hand-written tag is the form actually shipped:
+
+```html
+<!-- {% iframe https://www.youtube.com/embed/VIDEO_ID 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" width="600" height="400" allowfullscreen></iframe>
+```
+
 ### Escaping template syntax
 
 Writing about Hexo or Nunjucks means writing literal `{%` in a post, which Hexo will
