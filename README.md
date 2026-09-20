@@ -283,6 +283,15 @@ Theme settings belong in `_config.minos.yml` at the repo root, **not** in
 over the theme's own config, and the theme repo gitignores its internal
 `_config.yml` — anything written there is untracked and will be lost.
 
+### Translations (the `__()` helper)
+
+UI strings in templates come from
+[themes/minos/languages/\*.yml](themes/minos/languages), one file per
+language, keyed by dotted paths like `nav.toc`. A page's language is its
+front-matter `lang`, else the `:lang` segment of its path (`i18n_dir` in
+[_config.yml](_config.yml)), else the first entry of `language`. That
+language (plus fallbacks) is what `<%= __('nav.toc') %>` resolves against.
+
 ## Changing the theme
 
 [themes/minos](themes/minos) is a fork — [angela-tylee/hexo-theme-minos-clone](https://github.com/angela-tylee/hexo-theme-minos-clone),
