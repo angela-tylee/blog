@@ -324,32 +324,18 @@ boundGreet();
 
 ## 參考資料
 
-*《帶你無痛提升面試力》*5.3 this
-
-[1] https://web.dev/learn/javascript/functions/this#new-binding
-
-[2] https://www.cythilya.tw/2018/10/23/this/
-
-[3] https://kuro.tw/posts/2017/10/12/What-is-THIS-in-JavaScript-%E4%B8%8A/
-
-[4] https://kuro.tw/posts/2017/10/17/What-s-THIS-in-JavaScript-%E4%B8%AD/
-
-[5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
-
-[5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
-
-https://github.com/getify/You-Dont-Know-JS
-
-https://www.w3schools.com/js/js_this.asp
-
-https://www.geeksforgeeks.org/javascript-this-keyword/
-
-https://dev.to/nikolasbarwicki/is-this-keyword-a-problem-1ind
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#description
-
-https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
-
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#what_is_this
-
-https://medium.com/analytics-vidhya/javascripts-this-keyword-strict-bind-call-apply-79fc35039832
+- *《帶你無痛提升面試力》*5.3 this
+- [1] https://web.dev/learn/javascript/functions/this#new-binding
+- [2] https://www.cythilya.tw/2018/10/23/this/
+- [3] https://kuro.tw/posts/2017/10/12/What-is-THIS-in-JavaScript-%E4%B8%8A/
+- [4] https://kuro.tw/posts/2017/10/17/What-s-THIS-in-JavaScript-%E4%B8%AD/
+- [5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
+- [5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
+- https://github.com/getify/You-Dont-Know-JS
+- https://www.w3schools.com/js/js_this.asp
+- https://www.geeksforgeeks.org/javascript-this-keyword/
+- https://dev.to/nikolasbarwicki/is-this-keyword-a-problem-1ind
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#description
+- https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#what_is_this
+- https://medium.com/analytics-vidhya/javascripts-this-keyword-strict-bind-call-apply-79fc35039832

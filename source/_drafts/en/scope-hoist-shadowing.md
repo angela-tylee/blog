@@ -457,18 +457,11 @@ let count = 1; // end of TDZ
 
 ## References
 
-https://www.w3schools.com/js//js_scope.asp
-
-https://developer.mozilla.org/en-US/docs/Glossary/Scope
-
-https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
-
-https://www.udacity.com/enrollment/ud803
-
-*Ch 1 Variables and Scopes in the Painless JavaScript Interviewing Power Guide*
-
-https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
-
-https://www.geeksforgeeks.org/static-and-dynamic-scoping/
+- https://www.w3schools.com/js//js_scope.asp
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
+- https://www.udacity.com/enrollment/ud803
+- *Ch 1 Variables and Scopes in the Painless JavaScript Interviewing Power Guide*
+- https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
+- https://www.geeksforgeeks.org/static-and-dynamic-scoping/

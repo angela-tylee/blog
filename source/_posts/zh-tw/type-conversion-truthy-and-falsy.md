@@ -390,15 +390,15 @@ Boolean(function(){})   // true
 
 ## 參考資料
 
-[^1]https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
-[^2]https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
-[^3]https://javascriptrefined.io/the-wrapper-object-400311b29151
-[^4]https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
-[^5]https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
-[^6]https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
-https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
-https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
-https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
-https://javascript.info/primitives-methods
-https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
-https://www.cythilya.tw/2018/10/15/coercion/
+- [^1]https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
+- [^2]https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
+- [^3]https://javascriptrefined.io/the-wrapper-object-400311b29151
+- [^4]https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
+- [^5]https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
+- [^6]https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
+- https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
+- https://javascript.info/primitives-methods
+- https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
+- https://www.cythilya.tw/2018/10/15/coercion/

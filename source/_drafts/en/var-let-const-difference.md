@@ -366,10 +366,7 @@ let count = 1; // end of TDZ
 
 ## References
 
-https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/#:~:text=var%20and%20let%20create%20variables,use%20let%20or%20const%20instead
-
-https://realdennis.medium.com/%E6%87%B6%E4%BA%BA%E5%8C%85-javascript%E4%B8%AD-%E4%BD%BF%E7%94%A8let%E5%8F%96%E4%BB%A3var%E7%9A%843%E5%80%8B%E7%90%86%E7%94%B1-f11429793fcc
-
-https://www.explainthis.io/zh-hant/swe/js-var-let-const-in-javascript
-
-*《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
+- https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/#:~:text=var%20and%20let%20create%20variables,use%20let%20or%20const%20instead
+- https://realdennis.medium.com/%E6%87%B6%E4%BA%BA%E5%8C%85-javascript%E4%B8%AD-%E4%BD%BF%E7%94%A8let%E5%8F%96%E4%BB%A3var%E7%9A%843%E5%80%8B%E7%90%86%E7%94%B1-f11429793fcc
+- https://www.explainthis.io/zh-hant/swe/js-var-let-const-in-javascript
+- *《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*

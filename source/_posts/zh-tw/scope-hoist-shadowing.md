@@ -465,11 +465,11 @@ let count = 1; // end of TDZ
 
 ## 參考資料
 
-https://www.w3schools.com/js//js_scope.asp
-https://developer.mozilla.org/en-US/docs/Glossary/Scope
-https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
-https://www.udacity.com/enrollment/ud803
-*《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
-https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
-https://www.geeksforgeeks.org/static-and-dynamic-scoping/
+- https://www.w3schools.com/js//js_scope.asp
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
+- https://www.udacity.com/enrollment/ud803
+- *《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
+- https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
+- https://www.geeksforgeeks.org/static-and-dynamic-scoping/

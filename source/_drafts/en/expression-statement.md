@@ -274,10 +274,8 @@ greet();
 
 ## References
 
-https://en.wikipedia.org/wiki/Statement_(computer_science)
-https://en.wikipedia.org/wiki/Expression_(computer_science)
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
-
-https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
-
- Ch2 *of "Improve Your JavaScript Interviewing Skills Painlessly"*.
+- https://en.wikipedia.org/wiki/Statement_(computer_science)
+- https://en.wikipedia.org/wiki/Expression_(computer_science)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
+- https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
+- Ch2 *of "Improve Your JavaScript Interviewing Skills Painlessly"*.

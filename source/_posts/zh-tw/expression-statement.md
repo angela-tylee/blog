@@ -291,12 +291,8 @@ greet();
 
 ## 參考資料
 
-https://en.wikipedia.org/wiki/Statement_(computer_science)
-
-https://en.wikipedia.org/wiki/Expression_(computer_science)
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
-
-https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
-
-《帶你無痛提升 JavaScript 面試力》Ch2
+- https://en.wikipedia.org/wiki/Statement_(computer_science)
+- https://en.wikipedia.org/wiki/Expression_(computer_science)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
+- https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
+- 《帶你無痛提升 JavaScript 面試力》Ch2
