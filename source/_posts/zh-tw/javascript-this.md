@@ -92,7 +92,7 @@ tags:
 
 `this` 是從 1995 年 Brendan Eich 推出 JavaScript 以來便存在的語法，目的是讓 JavaScript 更符合 OOP 的特性，能在物件內定義函式 (function)，使物件含有內建方法 (methods)
 
-爾後開發者們開始發現 `this` 容易有非預期的行為，特別是在回呼函式 (callback function) 和 事件處理器 (event handler) 情境下的應用 ( this 會指向全域），此時的開發者常常用 `call`、`apply`，或軟綁定的方式 [[^2]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21) 將 `this` 儲存到一個變數中（命名為 `self` 或 `that`），作為解決方式
+爾後開發者們開始發現 `this` 容易有非預期的行為，特別是在回呼函式 (callback function) 和 事件處理器 (event handler) 情境下的應用 ( this 會指向全域），此時的開發者常常用 `call`、`apply`，或軟綁定的方式 [^2] 將 `this` 儲存到一個變數中（命名為 `self` 或 `that`），作為解決方式
 
 ```jsx
 // 軟綁定範例
@@ -108,7 +108,7 @@ function Timer() {
 
 與大部分 JavaScript 語法適用的靜態作用域不同，`this` 一直都是「動態」的，直到 ES6 (2015) 推出箭頭函式 (arrow function)，`this`才在箭頭函式中以「靜態」的方式運作
 
-所謂「動態」就是指，`this` 會依據**呼叫函式時**的執行上下文而有不同的結果 [[^3]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)；「靜態」則是指`this` 在**定義函式時**就固定，不會受上下文影響，因此也有人說箭頭函式沒有自己的 `this`
+所謂「動態」就是指，`this` 會依據**呼叫函式時**的執行上下文而有不同的結果 [^3]；「靜態」則是指`this` 在**定義函式時**就固定，不會受上下文影響，因此也有人說箭頭函式沒有自己的 `this`
 
 因此 2015 年，ES6 推出箭頭函式 (arrow function)，解決了回呼函式 (callback function) 會喪失 `this` 的問題
 
@@ -178,7 +178,7 @@ const obj = {
 obj.greet(); 
 ```
 
-#### 隱含的失去 (Implicitly Lost)[[^2]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)
+#### 隱含的失去 (Implicitly Lost)[^2]
 
 隱含失去的意思是：
 
@@ -237,8 +237,8 @@ obj.fn();
 箭頭函式的 this 是靜態的，也有人說箭頭函式沒有自己的 this，其特性如下：
 
 - 箭頭函式的 this 指向在定義函式時就確定了（繼承所在作用域的 this)，與呼叫的環境沒有關係
-- 箭頭函式無法使用 `bind`, `call`, `apply` 改變 `this` [[^5]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21) （箭頭函式內建 `.bind()` 特性 [[^5]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)）
-- 箭頭函式不會因為 `'use strict'` 而改變 `this` 指向 [[^5]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)
+- 箭頭函式無法使用 `bind`, `call`, `apply` 改變 `this` [^5] （箭頭函式內建 `.bind()` 特性 [^5]）
+- 箭頭函式不會因為 `'use strict'` 而改變 `this` 指向 [^5]
 - 箭頭函式不能作為建構函式 / 建構子來使用
 
 這些特性使得箭頭函式特別常用於 callback function，保留外層 this、解決 this 在 callback function 指向混雜的狀況

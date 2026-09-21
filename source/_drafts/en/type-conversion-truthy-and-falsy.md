@@ -42,7 +42,7 @@ You will learn…
 {% endcolorquote %}
     
 
-|  Characteristics |  Primitive [[^2]](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21) |  Object |
+|  Characteristics |  Primitive [^2] |  Object |
 | --- | --- | --- |
 | **Mutable** |  immutable: cannot be modified after creation |  mutable: content can be modified. |
 | **Methods and attributes** |  No built-in methods or attributes (but JavaScript temporarily provides methods in the form of wrapped objects) |  Have methods and attributes that can be manipulated directly |
@@ -68,7 +68,7 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
  The values that can be returned by `typeof` are:
 
- 'undefined', 'boolean', 'string', 'number ', 'bigint', 'symbol', 'object', 'function' [ **^1]. function' [[^1].](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21)**
+ 'undefined', 'boolean', 'string', 'number ', 'bigint', 'symbol', 'object', 'function'[^1].**
 {% endcolorquote %}
 
 ## Type Conversion / Type Coercion
@@ -126,11 +126,11 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
  The mechanism and role of **Primitive Wrapper Object** :
 
-- Autoboxing: When you call a property or method of a primitive type, JavaScript temporarily wraps the primitive type into an object type, and then discards the object after the property and method are used [[^3], a](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21) process called "Autoboxing" [[^4]](https://app.notion.com/p/1388d159628880469c21cc44b8d5d400?pvs=21) .
-- Providing methods and properties: By wrapping the prototype of an object, primitive types can use methods such as `toUpperCase() (` string), `toLocalString() (` number), etc. `[` ^4] `.`
+- Autoboxing: When you call a property or method of a primitive type, JavaScript temporarily wraps the primitive type into an object type, and then discards the object after the property and method are used [^3], a process called "Autoboxing" [^4] .
+- Providing methods and properties: By wrapping the prototype of an object, primitive types can use methods such as `toUpperCase()` (String), `toLocalString() ` (Number), etc.
     - All primitive types other than `null and undefined` have primitive wrappers.
 
- Example [[^5]](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21):
+ Example [^5]:
 
 ```jsx
 let language = 'JavaScript';
@@ -153,7 +153,7 @@ temp = null;                    // 丟棄物件型別
 
 **OOP, object-oriented programming**:
 
- This refers to the use of objects as the basic units of a program, encapsulating data (values) and behaviors (methods) that manipulate that data, in order to increase the reusability, flexibility, and extensibility of the software [[^6].](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21)
+ This refers to the use of objects as the basic units of a program, encapsulating data (values) and behaviors (methods) that manipulate that data, in order to increase the reusability, flexibility, and extensibility of the software [^6].
 {% endcolorquote %}
 
 ### Implicit Coercion
