@@ -18,7 +18,7 @@ tags:
 - 箭頭函式下的 this 爲什麼特別？
 - 嚴格模式 (use strict) 下的 this
 
-- 必備前章知識：
+必備前章知識：
 - **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
 - 箭頭函式的引用原因、使用時機
 {% endcolorquote %}
