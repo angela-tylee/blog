@@ -133,7 +133,7 @@ return (
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式物件：*{% post_link zh-tw/type-coversion-truthy-and-falsy 型別：型別的轉換 (Type Conversion) 與比較、真假值 $}*
+函式物件：*{% post_link zh-tw/type-conversion-truthy-and-falsy 型別：型別的轉換 (Type Conversion) 與比較、真假值 %}*
 
 一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 {% endcolorquote %}
