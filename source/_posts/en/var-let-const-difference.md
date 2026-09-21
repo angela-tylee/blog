@@ -5,6 +5,13 @@ categories: Technology
 tags: ['javascript', 'beginner']
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- Why are there so many ways to declare variables? Which one to use and when?
+- I often see `ReferenceError: Cannot access before initialization`. What does it mean?
+{% endcolorquote %}
+
 The first article is dedicated to the basics of the basics: variable declaration and the difference between var, let, and const.
 
 ## What is "declaration" of variables?
@@ -39,7 +46,7 @@ const res = await fetch(url);
 
 What is meant by "return"?
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ work in progress...
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ *(work in progress)*...
 {% endcolorquote %}
 
  Since DRY (Do not repeat yourself) is a very basic principle when writing code, storing values in variables is pretty much the way to start writing JavaScript!
@@ -128,7 +135,7 @@ What is meant by "return"?
 {% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+*{% post_link en/scope-hoist-shadowing %}*
 {% endcolorquote %}
 
 #### var: Full Scope, Function Scope
@@ -136,12 +143,12 @@ What is meant by "return"?
 - A `var` declared in the global scope is scoped to the entire global scope.
 - The scope of a `var` declared in a function is the entire scope of the function.
     
-    !codesnap2.png
+    <img src="../../images/function-scope.png" width="400">
     
 
  In other words, if `var` is declared in a function, but the variable is mentioned outside the function, then it cannot be found.
 
-!image.png
+<img src="../../images/is-not-defined.png" width="500">
 
 ```jsx
 function getData() {
@@ -182,9 +189,8 @@ console.log(window.c) // undefined
 
  For example: if, for loop, function all contain blocks.
 
-!codesnap.png
-
-!block-scope-for-loop.png
+<img src="../../images/block-scope.png" width="400">
+<img src="../../images/block-scope-for-loop.png" width="400">
 
 {% colorquote tips %}
 **Tips / Supplementary Knowledge**
@@ -218,7 +224,7 @@ console.log(j); // ReferenceError: Cannot access 'j' before initialization
 
  A complete declaration of a variable is divided into two parts: declaration and assignment.
 
-!variable-declaration-assignment.png
+<img src="../../images/variable-declaration-assignment.png" width="300">
 
  When JavaScript is executed, it goes through two main phases: **Creation** Phase and **Execution** Phase.
 
@@ -332,7 +338,7 @@ let count = 1; // end of TDZ
 {% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** work in progress...
+*{% post_link en/scope-hoist-shadowing %}*
 {% endcolorquote %}
 
 ## Why did ES6 introduce let, const?
@@ -367,10 +373,7 @@ let count = 1; // end of TDZ
 
 ## References
 
-https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/#:~:text=var%20and%20let%20create%20variables,use%20let%20or%20const%20instead
-
-https://realdennis.medium.com/%E6%87%B6%E4%BA%BA%E5%8C%85-javascript%E4%B8%AD-%E4%BD%BF%E7%94%A8let%E5%8F%96%E4%BB%A3var%E7%9A%843%E5%80%8B%E7%90%86%E7%94%B1-f11429793fcc
-
-https://www.explainthis.io/zh-hant/swe/js-var-let-const-in-javascript
-
-*《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
+- https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/#:~:text=var%20and%20let%20create%20variables,use%20let%20or%20const%20instead
+- https://realdennis.medium.com/%E6%87%B6%E4%BA%BA%E5%8C%85-javascript%E4%B8%AD-%E4%BD%BF%E7%94%A8let%E5%8F%96%E4%BB%A3var%E7%9A%843%E5%80%8B%E7%90%86%E7%94%B1-f11429793fcc
+- https://www.explainthis.io/zh-hant/swe/js-var-let-const-in-javascript
+- *《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*

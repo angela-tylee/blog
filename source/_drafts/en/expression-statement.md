@@ -5,6 +5,13 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- What is an expression and a statement and how can they be distinguished?
+- What is a function expression and a function statement? What is the difference in usage?
+{% endcolorquote %}
+
 ## What are expression and statement?
 
  The syntax of JavaScript (and most programming languages) can be categorized into two types depending on whether or not it returns a value: expressions and statements.
@@ -35,13 +42,15 @@ tags:
  To see if a value is returned, you can throw a piece of code into a console and see if a value is returned.
 
  expression will see the value returned.
+<img src="../../images/expression-console.png" width="500">
 
  statement does not return values, so you will only see console return `undefined`. 
+<img src="../../images/statement-console.png" width="500">
 
 {% colorquote info %}
 **Reference / Extended Reading**
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？*(work in progress)*...
 {% endcolorquote %}
 
  For more on the difference between expression and statement, see some of the MDN and Wikipedia descriptions:
@@ -73,7 +82,13 @@ tags:
 
  For example, `if... .else` If you understand the expression, you can understand that the if condition must be an expression that returns a value to avoid writing a `SyntaxError`.
 
+<img src="../../images/if-else-condition-mdn.png" width="450">
+
+<img src="../../images/if-else-syntax-error-statement.png" width="450">
+
  e.g. `Boolean()`
+
+<img src="../../images/if-else-syntax-error-primitive-wrapper-object.png" width="450">
 
 For example, `JSX` 
 
@@ -88,6 +103,7 @@ return (
   </li>
 );
 ```
+[https://react.dev/learn/conditional-rendering#conditional-ternary-operator--](https://react.dev/learn/conditional-rendering#conditional-ternary-operator--)
 
 ## Function Expressions and Function Statements
 
@@ -107,9 +123,9 @@ return (
 {% colorquote info %}
 **References / Extended Reading**
 
- Function object: **型別：型別的轉換 (Type Conversion) 與比較、真假值**
+ Function object: *{% post_link en/type-conversion-truthy-and-falsy Data Type - Type Conversion and Comparison, True and False Values %}*
 
- First-class function: **函式：一級函式、高階函式、回呼函式**
+ First-class function: **函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 {% endcolorquote %}
 
  The next point is the difference between a function expression and a function statement. Let's start with the basic syntax structure:
@@ -184,7 +200,7 @@ greet();
 {% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**.
+*{% post_link en/scope-hoist-shadowing What is Scope? Hoisting, Shadowing, Lexical Scope, TDZ, Parameter Passing %}*
 {% endcolorquote %}
 
 ### Named vs Anonymous
@@ -228,7 +244,7 @@ greet();
 {% colorquote info %}
 **Reference / Extended Reading**
 
-函式：封裝（好的封裝）、閉包 Counter II
+函式：封裝（好的封裝）、閉包 Counter II *(work in progress)*...
 {% endcolorquote %}
 
  One final note:
@@ -237,10 +253,12 @@ greet();
 
  (Read MDN to find out that Arrow Function is a shortened form of "function expression", not the syntactic sugar that all functions are written in.
 
+<img src="../../images/expression-arrow-function.png" width="500">
+
 {% colorquote info %}
 **References / Extended Reading**
 
-**函式：一級函式、高階函式、回呼函式**
+**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 
 箭頭函式的引用原因、使用時機
 {% endcolorquote %}
@@ -263,7 +281,8 @@ greet();
 
 ## References
 
-https://en.wikipedia.org/wiki/Statement_(computer_science)
-https://en.wikipedia.org/wiki/Expression_(computer_science)
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
- Ch2 *of "Improve Your JavaScript Interviewing Skills Painlessly"*.
+- https://en.wikipedia.org/wiki/Statement_(computer_science)
+- https://en.wikipedia.org/wiki/Expression_(computer_science)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
+- https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
+- Ch2 *of "Improve Your JavaScript Interviewing Skills Painlessly"*.

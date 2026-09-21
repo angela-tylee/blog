@@ -1,23 +1,28 @@
 ---
 title: this 的指向：什麼時候會用到 this？要怎麼用得正確？
-date: 2025-05-05 23:09:21
 categories: Technology
+excerpt: >-
+  <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一個 JavaScript 的關鍵字
+  (keyword)，通常用以代指呼叫函式時函式前的物件</p><p>然而 `this`
+  在不同執行環境下所指向的值也會有所不同</p>以下先列舉常見的實戰用法：
+date: 2025-05-05 23:09:21
+created: 2025-05-05 23:09:21
 tags:
-excerpt: <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一個 JavaScript 的關鍵字 (keyword)，通常用以代指呼叫函式時函式前的物件</p><p>然而 `this` 在不同執行環境下所指向的值也會有所不同</p>以下先列舉常見的實戰用法：
-
 ---
 
-> 學習重點：
-> 
-> - this 的指向與實戰情境
-> - 預設綁定 (default binding)、隱含綁定 (implicit binding)、明確綁定 (explicit binding)
-> - 箭頭函式下的 this 爲什麼特別？
-> - 嚴格模式 (use strict) 下的 this
+{% colorquote appendix %}
+學習重點：
 
-> 必備前章知識：
-> - **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
-> - 箭頭函式的引用原因、使用時機
-> 
+- this 的指向與實戰情境
+- 預設綁定 (default binding)、隱含綁定 (implicit binding)、明確綁定 (explicit binding)
+- 箭頭函式下的 this 爲什麼特別？
+- 嚴格模式 (use strict) 下的 this
+
+必備前章知識：
+- **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+- 箭頭函式的引用原因、使用時機
+{% endcolorquote %}
+
 
 ## 為什麼要了解 this？實戰常見的 this
 
@@ -87,7 +92,7 @@ excerpt: <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一
 
 `this` 是從 1995 年 Brendan Eich 推出 JavaScript 以來便存在的語法，目的是讓 JavaScript 更符合 OOP 的特性，能在物件內定義函式 (function)，使物件含有內建方法 (methods)
 
-爾後開發者們開始發現 `this` 容易有非預期的行為，特別是在回呼函式 (callback function) 和 事件處理器 (event handler) 情境下的應用 ( this 會指向全域），此時的開發者常常用 `call`、`apply`，或軟綁定的方式 [[^2]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21) 將 `this` 儲存到一個變數中（命名為 `self` 或 `that`），作為解決方式
+爾後開發者們開始發現 `this` 容易有非預期的行為，特別是在回呼函式 (callback function) 和 事件處理器 (event handler) 情境下的應用 ( this 會指向全域），此時的開發者常常用 `call`、`apply`，或軟綁定的方式 [^2] 將 `this` 儲存到一個變數中（命名為 `self` 或 `that`），作為解決方式
 
 ```jsx
 // 軟綁定範例
@@ -103,7 +108,7 @@ function Timer() {
 
 與大部分 JavaScript 語法適用的靜態作用域不同，`this` 一直都是「動態」的，直到 ES6 (2015) 推出箭頭函式 (arrow function)，`this`才在箭頭函式中以「靜態」的方式運作
 
-所謂「動態」就是指，`this` 會依據**呼叫函式時**的執行上下文而有不同的結果 [[^3]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)；「靜態」則是指`this` 在**定義函式時**就固定，不會受上下文影響，因此也有人說箭頭函式沒有自己的 `this`
+所謂「動態」就是指，`this` 會依據**呼叫函式時**的執行上下文而有不同的結果 [^3]；「靜態」則是指`this` 在**定義函式時**就固定，不會受上下文影響，因此也有人說箭頭函式沒有自己的 `this`
 
 因此 2015 年，ES6 推出箭頭函式 (arrow function)，解決了回呼函式 (callback function) 會喪失 `this` 的問題
 
@@ -173,7 +178,7 @@ const obj = {
 obj.greet(); 
 ```
 
-#### 隱含的失去 (Implicitly Lost)[[^2]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)
+#### 隱含的失去 (Implicitly Lost)[^2]
 
 隱含失去的意思是：
 
@@ -232,8 +237,8 @@ obj.fn();
 箭頭函式的 this 是靜態的，也有人說箭頭函式沒有自己的 this，其特性如下：
 
 - 箭頭函式的 this 指向在定義函式時就確定了（繼承所在作用域的 this)，與呼叫的環境沒有關係
-- 箭頭函式無法使用 `bind`, `call`, `apply` 改變 `this` [[^5]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21) （箭頭函式內建 `.bind()` 特性 [[^5]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)）
-- 箭頭函式不會因為 `'use strict'` 而改變 `this` 指向 [[^5]](https://app.notion.com/p/this-this-1438d159628880d8a7a1e8c333a28daa?pvs=21)
+- 箭頭函式無法使用 `bind`, `call`, `apply` 改變 `this` [^5] （箭頭函式內建 `.bind()` 特性 [^5]）
+- 箭頭函式不會因為 `'use strict'` 而改變 `this` 指向 [^5]
 - 箭頭函式不能作為建構函式 / 建構子來使用
 
 這些特性使得箭頭函式特別常用於 callback function，保留外層 this、解決 this 在 callback function 指向混雜的狀況
@@ -252,9 +257,9 @@ const obj = {
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-靜態作用域：**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+靜態作用域：*{% post_link zh-tw/scope-hoist-shadowing 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式 %}*
 
-箭頭函式：箭頭函式的引用原因、使用時機
+箭頭函式：箭頭函式的引用原因、使用時機 *(work in progress)*...
 {% endcolorquote %}
 
 ### 明確綁定 / 顯式綁定 (Explicit Binding) ：Call, Apply, Bind
@@ -319,32 +324,18 @@ boundGreet();
 
 ## 參考資料
 
-*《帶你無痛提升面試力》*5.3 this
-
-[1] https://web.dev/learn/javascript/functions/this#new-binding
-
-[2] https://www.cythilya.tw/2018/10/23/this/
-
-[3] https://kuro.tw/posts/2017/10/12/What-is-THIS-in-JavaScript-%E4%B8%8A/
-
-[4] https://kuro.tw/posts/2017/10/17/What-s-THIS-in-JavaScript-%E4%B8%AD/
-
-[5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
-
-[5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
-
-https://github.com/getify/You-Dont-Know-JS
-
-https://www.w3schools.com/js/js_this.asp
-
-https://www.geeksforgeeks.org/javascript-this-keyword/
-
-https://dev.to/nikolasbarwicki/is-this-keyword-a-problem-1ind
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#description
-
-https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
-
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#what_is_this
-
-https://medium.com/analytics-vidhya/javascripts-this-keyword-strict-bind-call-apply-79fc35039832
+- *《帶你無痛提升面試力》*5.3 this
+- [1] https://web.dev/learn/javascript/functions/this#new-binding
+- [2] https://www.cythilya.tw/2018/10/23/this/
+- [3] https://kuro.tw/posts/2017/10/12/What-is-THIS-in-JavaScript-%E4%B8%8A/
+- [4] https://kuro.tw/posts/2017/10/17/What-s-THIS-in-JavaScript-%E4%B8%AD/
+- [5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
+- [5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
+- https://github.com/getify/You-Dont-Know-JS
+- https://www.w3schools.com/js/js_this.asp
+- https://www.geeksforgeeks.org/javascript-this-keyword/
+- https://dev.to/nikolasbarwicki/is-this-keyword-a-problem-1ind
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#description
+- https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#what_is_this
+- https://medium.com/analytics-vidhya/javascripts-this-keyword-strict-bind-call-apply-79fc35039832

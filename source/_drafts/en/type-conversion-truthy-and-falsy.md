@@ -5,6 +5,16 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- The 8 types of JavaScript
+- Methods of Type Conversion: Explicit coercion, Implicit coercion
+- Primitive Wrapper Objects
+- Rules for comparing types: Loose equality, strict equality.
+- True and False Values
+{% endcolorquote %}
+
 ## JavaScript has 8 Data Types
 
  JavaScript has 8 types: 7 primitive data types and 1 object data type.
@@ -32,7 +42,7 @@ tags:
 {% endcolorquote %}
     
 
-|  Characteristics |  Primitive [[^2]](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21) |  Object |
+|  Characteristics |  Primitive [^2] |  Object |
 | --- | --- | --- |
 | **Mutable** |  immutable: cannot be modified after creation |  mutable: content can be modified. |
 | **Methods and attributes** |  No built-in methods or attributes (but JavaScript temporarily provides methods in the form of wrapped objects) |  Have methods and attributes that can be manipulated directly |
@@ -41,7 +51,7 @@ tags:
 
  Types can be verified with the `typeof` operator
 
-!image.png
+<img src="../../images/typeof.png" width="500">
 
 ### Pitfalls of `typeof`
 
@@ -58,17 +68,19 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
  The values that can be returned by `typeof` are:
 
- 'undefined', 'boolean', 'string', 'number ', 'bigint', 'symbol', 'object', 'function' [ **^1]. function' [[^1].](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21)**
+ 'undefined', 'boolean', 'string', 'number ', 'bigint', 'symbol', 'object', 'function'[^1].**
 {% endcolorquote %}
 
 ## Type Conversion / Type Coercion
 
  As we all know, JavaScript is a loosely typed language, you don't need to specify the type of the variable when you declare it, you can change the type freely later, and JavaScript will convert the type "by itself" during compilation (what the hell?!).
 
+<img src="../../images/it-was-a-disaster.gif">
+
 {% colorquote info %}
 **References / Extended Reading**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** *(work in progress)*...
 {% endcolorquote %}
 
  The advantage is that it's easy and fast to write, and saves a lot of trouble; the disadvantage is that if you don't understand the conversion rules, you're likely to encounter unintended errors!
@@ -100,9 +112,9 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 |  Target type |  Original type wrapped object |  Other methods |  Example |
 | --- | --- | --- | --- |
-| **String** | `String(value)` | `value.toString()` | `String(123)` → `"123"toString()` Commonly used for objects and values, not `null/undefined`. |
-| **String(value)** | `Number(value)` | `parseInt(value, base)parseFloat(value)+value` | `Number("123")` → `123parseInt("2")` → `2parseFloat("3.14")` → `3.14+ "42"` → `42` |
-| **Boolean** | `Boolean(value)` |  `value value` | `Boolean(0)` → `false!!!" hello"` → `true` |
+| **String** | `String(value)` | `value.toString()` | - `String(123)` → `"123"`<br><br>- `toString()` is commonly used for objects and numbers, not applicable to `null/undefined` |
+| **Number** | `Number(value)` | - `parseInt(value, base)`<br><br>- `parseFloat(value)`<br><br>- `+value`| - `Number("123")` → `123`<br><br>- `parseInt("2")` → `2`<br><br>- `parseFloat("3.14")` → `3.14`<br><br>- `+"42"` → `42` |
+| **Boolean** | `Boolean(value)` | `!!value` | - `Boolean(0)` → `false`<br><br>- `!!"hello"` → `true` |
 
 #### Primitive Wrapper Objects
 
@@ -114,11 +126,11 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
  The mechanism and role of **Primitive Wrapper Object** :
 
-- Autoboxing: When you call a property or method of a primitive type, JavaScript temporarily wraps the primitive type into an object type, and then discards the object after the property and method are used [[^3], a](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21) process called "Autoboxing" [[^4]](https://app.notion.com/p/1388d159628880469c21cc44b8d5d400?pvs=21) .
-- Providing methods and properties: By wrapping the prototype of an object, primitive types can use methods such as `toUpperCase() (` string), `toLocalString() (` number), etc. `[` ^4] `.`
+- Autoboxing: When you call a property or method of a primitive type, JavaScript temporarily wraps the primitive type into an object type, and then discards the object after the property and method are used [^3], a process called "Autoboxing" [^4] .
+- Providing methods and properties: By wrapping the prototype of an object, primitive types can use methods such as `toUpperCase()` (String), `toLocalString() ` (Number), etc.
     - All primitive types other than `null and undefined` have primitive wrappers.
 
- Example [[^5]](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21):
+ Example [^5]:
 
 ```jsx
 let language = 'JavaScript';
@@ -141,7 +153,7 @@ temp = null;                    // 丟棄物件型別
 
 **OOP, object-oriented programming**:
 
- This refers to the use of objects as the basic units of a program, encapsulating data (values) and behaviors (methods) that manipulate that data, in order to increase the reusability, flexibility, and extensibility of the software [[^6].](https://app.notion.com/p/Data-Type-Type-Conversion-and-Comparison-True-and-False-Values-1f58d15962888008bc25c9d63fb6d886?pvs=21)
+ This refers to the use of objects as the basic units of a program, encapsulating data (values) and behaviors (methods) that manipulate that data, in order to increase the reusability, flexibility, and extensibility of the software [^6].
 {% endcolorquote %}
 
 ### Implicit Coercion
@@ -198,9 +210,9 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 
  Array of classes:
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 *(work in progress)*...
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+**DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes** *(work in progress)*...
 {% endcolorquote %}
 
 ## Type Comparison
@@ -249,7 +261,7 @@ null === undefined // false：型別不同
 {% colorquote info %}
 **References / Extended Reading**
 
- Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+ Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）*(work in progress)*...
 {% endcolorquote %}
 
 - `null`, `undefined`, `NaN`
@@ -284,7 +296,7 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 {% colorquote info %}
 **Reference / Extended Reading**
 
-is not defined、undefined、NAN、null
+is not defined、undefined、NAN、null *(work in progress)*...
 {% endcolorquote %}
 
 ## True, False
@@ -307,7 +319,7 @@ Boolean(function(){})   // true
 {% colorquote info %}
 **Reference / Extended Reading**
 
- Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||**
+ Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||** *(work in progress)*...
 {% endcolorquote %}
 
 ## Summary
@@ -358,26 +370,15 @@ Boolean(function(){})   // true
 
 ## References
 
- [^1] https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
-
- [^2] https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
-
- [^3] https://javascriptrefined.io/the-wrapper-object-400311b29151
-
- [^4] https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
-
- [^5] https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
-
- [^6] https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
-
-https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
-
-https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
-
-https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
-
-https://javascript.info/primitives-methods
-
-https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
-
-https://www.cythilya.tw/2018/10/15/coercion/
+- [^1] https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
+- [^2] https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
+- [^3] https://javascriptrefined.io/the-wrapper-object-400311b29151
+- [^4] https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
+- [^5] https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
+- [^6] https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
+- https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
+- https://javascript.info/primitives-methods
+- https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
+- https://www.cythilya.tw/2018/10/15/coercion/

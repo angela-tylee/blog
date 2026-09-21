@@ -1,9 +1,21 @@
 ---
 title: 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式
-date: 2025-04-16 14:29:00
 categories: Technology
+date: 2025-04-16 14:29:00
+created: 2025-04-16 14:29:00
 tags:
 ---
+
+{% colorquote appendix %}
+學習重點：
+
+- 函式作用域 (Function Scope)、區塊作用域 (Block Scope)
+- 提升 (Hoisting)
+- 遮蔽 (Shadowing)
+- 暫死區 (TDZ, Temporary Dead Zone)
+- 語法作用域 (Lexical Scope)
+{% endcolorquote %}
+
 
 先上一些情境題 ：
 
@@ -94,17 +106,13 @@ fn2();
 - 函式作用域 (Function Scope)：`var`  宣告的變數
 - 區塊作用域 (Block Scope)：`let`、`const` 宣告的變數
 
-!函式作用域
+函式作用域：
+<img src="../../images/function-scope.png" width="400">
 
-函式作用域
+區塊作用域：
 
-!區塊作用域
-
-區塊作用域
-
-!區塊作用域
-
-區塊作用域
+<img src="../../images/block-scope.png" width="400">
+<img src="../../images/block-scope-for-loop.png" width="400">
 
 {% colorquote tips %}
 **小提示 / 補充知識**
@@ -174,7 +182,7 @@ JavaScript 並沒有一個固定做變數宣告的區域，你可以在任何地
 
 只有變數宣告 (declaration) 部分會提升，賦值 (assignment) 段落會留在原地
 
-!variable-declaration-assignment.png
+<img src="../../images/variable-declaration-assignment.png" width="300">
 
 範例：
 
@@ -252,16 +260,15 @@ fn(); // '恩娣'
 {% colorquote info %}
 **延伸閱讀**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link zh-tw/var-let-const-difference 變數宣告以及 var, let, const 的差異 %}*
 
-表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
+*{% post_link zh-tw/expression-statement 表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式 %}*
 {% endcolorquote %}
 
 可參考 Udacity 說明影片，有清楚的視覺演示：
 
-Source: [Intro to JavaScript | Udacity](https://youtu.be/8z-HSS34dsM)
-
-Source: Intro to JavaScript | Udacity
+<!-- {% iframe https://www.youtube.com/embed/8z-HSS34dsM 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="650" height="350" allowfullscreen></iframe>
 
 ### 為什麼要有提升的設計？
 
@@ -316,9 +323,7 @@ fn2(); // 恩娣
 
 參考 Udacity 影片：
 
-Source: [Intro to JavaScript | Udacity](https://youtu.be/NMLG2PQ6RRM)
-
-Source: Intro to JavaScript | Udacity
+<iframe src="https://youtube.com/embed/NMLG2PQ6RRM" frameborder="0" width="650" height="350" allowfullscreen></iframe>
 
 ### 變數 vs 參數：參數的傳遞方式
 
@@ -378,7 +383,8 @@ fn2(); // 恩娣
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link zh-tw/var-let-const-difference 變數宣告以及 var, let, const 的差異 %}*
+
 {% endcolorquote %}
 
 {% colorquote glossary %}
@@ -457,11 +463,11 @@ let count = 1; // end of TDZ
 
 ## 參考資料
 
-https://www.w3schools.com/js//js_scope.asp
-https://developer.mozilla.org/en-US/docs/Glossary/Scope
-https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
-https://www.udacity.com/enrollment/ud803
-*《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
-https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
-https://www.geeksforgeeks.org/static-and-dynamic-scoping/
+- https://www.w3schools.com/js//js_scope.asp
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
+- https://www.udacity.com/enrollment/ud803
+- *《帶你無痛提升 JavaScript 面試力》Ch 1 變數與作用域*
+- https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
+- https://www.geeksforgeeks.org/static-and-dynamic-scoping/

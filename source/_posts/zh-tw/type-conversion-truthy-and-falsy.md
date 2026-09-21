@@ -1,9 +1,20 @@
 ---
 title: 型別：型別的轉換 (Type Conversion) 與比較、真假值
-date: 2025-04-19 23:05:51
 categories: Technology
+date: 2025-04-19 23:05:51
+created: 2025-04-19 23:05:51
 tags:
 ---
+
+{% colorquote appendix %}
+學習重點：
+
+- JavaScript 的 8 種型別
+- 型別轉換的方法：顯性轉換 (Explicit coercion)、隱性轉換 (Implicit coercion)
+- 原始型別包裹物件 (Primitive Wrapper Object)
+- 型別比較的規則：寬鬆相等、嚴格相等
+- 真值與假值
+{% endcolorquote %}
 
 ## 8 種型別
 
@@ -32,7 +43,7 @@ JavaScript 共有 8 種型別：7 個原始型別 (primitive data type)、1 個�
 {% endcolorquote %}
     
 
-| 特徵 | 原始型別 (Primitive) [[^2]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21) | 物件型別 (Object) |
+| 特徵 | 原始型別 (Primitive) [^2] | 物件型別 (Object) |
 | --- | --- | --- |
 | **可變性** | 不可變（immutable）：創建後無法修改 | 可變（mutable）：內容可被修改 |
 | **方法與屬性** | 沒有內建方法或屬性（但 JavaScript 會臨時以包裝物件形式提供方法） | 擁有方法和屬性，可以直接操作 |
@@ -41,7 +52,7 @@ JavaScript 共有 8 種型別：7 個原始型別 (primitive data type)、1 個�
 
 型別可以用 `typeof` 運算子來檢驗
 
-!image.png
+<img src="../../images/typeof.png" width="500">
 
 ### `typeof` 的陷阱
 
@@ -58,17 +69,19 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 `typeof` 可以回傳的值有：
 
-‘undefined’、‘boolean’、‘string’、‘number’、‘bigint’、‘symbol’、‘object’、**‘function’ [[^1]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21)**
+‘undefined’、‘boolean’、‘string’、‘number’、‘bigint’、‘symbol’、‘object’、**‘function’ [^1]**
 {% endcolorquote %}
 
 ## 型別轉換 (Type Conversion / Type Coercion)
 
 眾所皆知，JavaScript 是一個弱型別 (loosely typed) 語言，宣告時不用指定變數的型別、能在後續自由更換型別，JavaScript 也會在編譯的過程中依據需求「自行」轉換型別（什麼鬼？！）
 
+<img src="../../images/it-was-a-disaster.gif">
+
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** *(work in progress)*...
 {% endcolorquote %}
 
 好處是撰寫時很方便又快速，省去許多麻煩；壞處就是如果沒有搞懂轉換的規則，就容易遇到非預期的錯誤
@@ -100,24 +113,9 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 | 目標型別 | 原始型別包裹物件 | 其他方法 | 範例 |
 | --- | --- | --- | --- |
-| **String** | `String(value)` | `value.toString()` | `String(123)` → `"123"`
-
-`toString()` 常用於物件與數值，不適用於 `null/undefined` |
-| **Number** | `Number(value)` | `parseInt(value, base)`
-
-`parseFloat(value)`
-
-`+value`
- | `Number("123")` → `123`
-
-`parseInt("2")` → `2`
-
-`parseFloat("3.14")` → `3.14`
-
-`+"42"` → `42` |
-| **Boolean** | `Boolean(value)` | `!!value` | `Boolean(0)` → `false`
-
-`!!"hello"` → `true` |
+| **String** | `String(value)` | `value.toString()` | - `String(123)` → `"123"`<br><br>- `toString()` 常用於物件與數值，不適用於 `null/undefined` |
+| **Number** | `Number(value)` | - `parseInt(value, base)`<br><br>- `parseFloat(value)`<br><br>- `+value`| - `Number("123")` → `123`<br><br>- `parseInt("2")` → `2`<br><br>- `parseFloat("3.14")` → `3.14`<br><br>- `+"42"` → `42` |
+| **Boolean** | `Boolean(value)` | `!!value` | - `Boolean(0)` → `false`<br><br>- `!!"hello"` → `true` |
 
 #### 原始型別包裹物件 (Primitive Wrapper Object)
 
@@ -129,11 +127,11 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 **原始型別包裹物件 (Primitive Wrapper Object)** 的機制及作用：
 
-- Autoboxing：當你要調用原始型別 (primitive) 的屬性 (property) 或方法 (methods) 時，JavaScript 會暫時將原始型別包裝成物件型別，當屬性及方法使用完畢後，再將物件丟棄 [[^3]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21)，這過程被稱為「Autoboxing」 [[^4]](https://app.notion.com/p/1388d159628880469c21cc44b8d5d400?pvs=21)
+- Autoboxing：當你要調用原始型別 (primitive) 的屬性 (property) 或方法 (methods) 時，JavaScript 會暫時將原始型別包裝成物件型別，當屬性及方法使用完畢後，再將物件丟棄 [^3]，這過程被稱為「Autoboxing」 [^4]
 - 提供方法與屬性：透過包裹物件的原型（prototype），原始型別可使用如 `toUpperCase()`（字串）、`toLocalString()`（數字）等方法
     - 除了 `null、undefined` 之外的原始型別，都有原始型別包裹物件可以使用
 
-範例[[^5]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21)：
+範例[^5]：
 
 ```jsx
 let language = 'JavaScript';
@@ -156,7 +154,7 @@ Primitive Wrapper 是 JavaScript 中為了讓原始型別也能具備物件行�
 
 **OOP, object-oriented programming（物件導向程式設計）**：
 
-指的便是將物件作為程式的基本單元，將資料（值）和操作該資料的行為（方法）封裝其中，以提高軟體的重用性、靈活性和擴充性 [[^6]](https://app.notion.com/p/Type-Conversion-1388d1596288806199eae83501bc7a45?pvs=21)
+指的便是將物件作為程式的基本單元，將資料（值）和操作該資料的行為（方法）封裝其中，以提高軟體的重用性、靈活性和擴充性 [^6]
 {% endcolorquote %}
 
 ### 隱性轉換 (Implicit Coercion)
@@ -217,9 +215,9 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 
 類陣列：
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 *(work in progress)*...
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+**DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes** *(work in progress)*...
 {% endcolorquote %}
 
 ## 型別比較
@@ -268,7 +266,7 @@ null === undefined // false：型別不同
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-Call by Sharing：物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+Call by Sharing：物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）*(work in progress)*...
 {% endcolorquote %}
 
 - `null`、`undefined`、`NaN`
@@ -303,7 +301,7 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-is not defined、undefined、NAN、null
+is not defined、undefined、NAN、null *(work in progress)*...
 {% endcolorquote %}
 
 ## 真值、假值
@@ -326,7 +324,7 @@ Boolean(function(){})   // true
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-三元運算子、II && 運算子 **Operators 運算子：Prefix & Postfix、&& ||**
+三元運算子、II && 運算子 **Operators 運算子：Prefix & Postfix、&& ||** *(work in progress)*...
 {% endcolorquote %}
 
 ## 總結
@@ -377,15 +375,15 @@ Boolean(function(){})   // true
 
 ## 參考資料
 
-[^1]https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
-[^2]https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
-[^3]https://javascriptrefined.io/the-wrapper-object-400311b29151
-[^4]https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
-[^5]https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
-[^6]https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
-https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
-https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
-https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
-https://javascript.info/primitives-methods
-https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
-https://www.cythilya.tw/2018/10/15/coercion/
+- [^1]https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
+- [^2]https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
+- [^3]https://javascriptrefined.io/the-wrapper-object-400311b29151
+- [^4]https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
+- [^5]https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
+- [^6]https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
+- https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
+- https://javascript.info/primitives-methods
+- https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
+- https://www.cythilya.tw/2018/10/15/coercion/

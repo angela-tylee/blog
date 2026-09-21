@@ -25,18 +25,26 @@ article:
   date_format: relative
 
 # Navigation bar menu links.
+# Paths starting with `/` are language-relative: the navbar resolves them
+# against the language of the page it is rendered on, so `/archives` becomes
+# `/en/archives` or `/zh-tw/archives`. Use a full URL for anything external.
 menu:
   Archives: /archives
   Technology: /categories/Technology
   Lifestyle: /categories/LifeStyle
-  About: /en/about
+  About: /about
 
 # Search plugin settings.
 search:
   type: insight
 
-# Navigation bar toc settings
-toc: true
+# Table of contents settings: navbar | sidebar | both | false
+toc: both
+
+# Which side the toc sidebar floats on: left or right (default: right).
+# Handy if you're also adding a profile/recommended-articles panel on the
+# other side.
+toc_position: right
 
 # Share plugin settings.
 # Disabled: the theme only ships third-party providers (sharethis / addthis),
