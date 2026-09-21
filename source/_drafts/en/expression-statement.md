@@ -43,7 +43,7 @@ tags:
 {% colorquote info %}
 **Reference / Extended Reading**
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？*(work in progress)*...
 {% endcolorquote %}
 
  For more on the difference between expression and statement, see some of the MDN and Wikipedia descriptions:
@@ -116,9 +116,9 @@ return (
 {% colorquote info %}
 **References / Extended Reading**
 
- Function object: **型別：型別的轉換 (Type Conversion) 與比較、真假值**
+ Function object: *{% post_link en/type-conversion-truthy-and-falsy Data Type - Type Conversion and Comparison, True and False Values %}*
 
- First-class function: **函式：一級函式、高階函式、回呼函式**
+ First-class function: **函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 {% endcolorquote %}
 
  The next point is the difference between a function expression and a function statement. Let's start with the basic syntax structure:
@@ -193,7 +193,7 @@ greet();
 {% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**.
+*{% post_link en/scope-hoist-shadowing What is Scope? Hoisting, Shadowing, Lexical Scope, TDZ, Parameter Passing %}*
 {% endcolorquote %}
 
 ### Named vs Anonymous
@@ -237,7 +237,7 @@ greet();
 {% colorquote info %}
 **Reference / Extended Reading**
 
-函式：封裝（好的封裝）、閉包 Counter II
+函式：封裝（好的封裝）、閉包 Counter II *(work in progress)*...
 {% endcolorquote %}
 
  One final note:
@@ -251,7 +251,7 @@ greet();
 {% colorquote info %}
 **References / Extended Reading**
 
-**函式：一級函式、高階函式、回呼函式**
+**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 
 箭頭函式的引用原因、使用時機
 {% endcolorquote %}

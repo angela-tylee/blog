@@ -248,9 +248,9 @@ fn(); // '恩娣'
 {% colorquote info %}
 **Extended Reading**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link en/var-let-const-difference Variable declaration and the difference between var, let, const %}*
 
-表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
+*{% post_link en/expression-statement Expression vs Statement, Function Statement vs Function Expression %}*
 {% endcolorquote %}
 
  See the Udacity explanatory video for a clear visual demonstration:
@@ -373,7 +373,8 @@ fn2(); // 恩娣
 {% colorquote info %}
 **References / Extended Reading**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link en/var-let-const-difference Variable declaration and the difference between var, let, const %}*
+
 {% endcolorquote %}
 
 {% colorquote glossary %}

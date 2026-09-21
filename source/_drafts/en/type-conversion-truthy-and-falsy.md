@@ -70,7 +70,7 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 {% colorquote info %}
 **References / Extended Reading**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** *(work in progress)*...
 {% endcolorquote %}
 
  The advantage is that it's easy and fast to write, and saves a lot of trouble; the disadvantage is that if you don't understand the conversion rules, you're likely to encounter unintended errors!
@@ -200,9 +200,9 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 
  Array of classes:
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 *(work in progress)*...
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+**DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes** *(work in progress)*...
 {% endcolorquote %}
 
 ## Type Comparison
@@ -251,7 +251,7 @@ null === undefined // false：型別不同
 {% colorquote info %}
 **References / Extended Reading**
 
- Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+ Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）*(work in progress)*...
 {% endcolorquote %}
 
 - `null`, `undefined`, `NaN`
@@ -286,7 +286,7 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 {% colorquote info %}
 **Reference / Extended Reading**
 
-is not defined、undefined、NAN、null
+is not defined、undefined、NAN、null *(work in progress)*...
 {% endcolorquote %}
 
 ## True, False
@@ -309,7 +309,7 @@ Boolean(function(){})   // true
 {% colorquote info %}
 **Reference / Extended Reading**
 
- Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||**
+ Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||** *(work in progress)*...
 {% endcolorquote %}
 
 ## Summary

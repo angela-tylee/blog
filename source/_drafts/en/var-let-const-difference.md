@@ -39,7 +39,7 @@ const res = await fetch(url);
 
 What is meant by "return"?
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ work in progress...
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ *(work in progress)*...
 {% endcolorquote %}
 
  Since DRY (Do not repeat yourself) is a very basic principle when writing code, storing values in variables is pretty much the way to start writing JavaScript!
@@ -128,7 +128,7 @@ What is meant by "return"?
 {% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+*{% post_link en/scope-hoist-shadowing %}*
 {% endcolorquote %}
 
 #### var: Full Scope, Function Scope
@@ -331,7 +331,7 @@ let count = 1; // end of TDZ
 {% colorquote info %}
 **Reference / Extended Reading**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式** work in progress...
+*{% post_link en/scope-hoist-shadowing %}*
 {% endcolorquote %}
 
 ## Why did ES6 introduce let, const?
