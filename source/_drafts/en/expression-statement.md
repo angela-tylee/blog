@@ -5,6 +5,13 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- What is an expression and a statement and how can they be distinguished?
+- What is a function expression and a function statement? What is the difference in usage?
+{% endcolorquote %}
+
 ## What are expression and statement?
 
  The syntax of JavaScript (and most programming languages) can be categorized into two types depending on whether or not it returns a value: expressions and statements.

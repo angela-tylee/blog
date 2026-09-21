@@ -5,6 +5,16 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- Function Scope, Block Scope
+- Hoisting
+- Shadowing
+- TDZ (Temporary Dead Zone)
+- Lexical Scope
+{% endcolorquote %}
+
 Let's start with some contextual questions:
 
  (From Hexagon Kasper's book, "How to Improve Your JavaScript Interviewing Skills Without Pain")

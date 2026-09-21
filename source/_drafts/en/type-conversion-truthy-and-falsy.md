@@ -5,6 +5,16 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- The 8 types of JavaScript
+- Methods of Type Conversion: Explicit coercion, Implicit coercion
+- Primitive Wrapper Objects
+- Rules for comparing types: Loose equality, strict equality.
+- True and False Values
+{% endcolorquote %}
+
 ## JavaScript has 8 Data Types
 
  JavaScript has 8 types: 7 primitive data types and 1 object data type.
