@@ -94,7 +94,7 @@ Reference: [Hexo - Variables](https://hexo.io/docs/variables)
 
 Reference: [Hexo - Tag Plugin](https://hexo.io/docs/tag-plugins)
 
-Four colored callout types, each with an icon badge on the left border:
+Seven colored callout types, each with an icon badge on the left border:
 
 ```
 {% colorquote warning %}
@@ -108,6 +108,9 @@ Hooks must not be called conditionally.
 | `success` | green | check |
 | `warning` | yellow | question mark |
 | `danger` | red | exclamation mark |
+| `glossary` | pink | question mark |
+| `tips` | purple | lightbulb |
+| `appendix` | grey | i |
 
 Markdown works inside the block. This is the theme's own `colorquote` tag, registered
 in [themes/minos/scripts/99_tags.js](themes/minos/scripts/99_tags.js) and styled in
@@ -211,15 +214,20 @@ Add snippet to `keybindings.json`
 ### Images
 
 Put image files in `source/images/` — anything under `source/` not prefixed with `_`
-is copied to `public/` as-is. Reference them root-relative:
+is copied to `public/` as-is. Reference them as `./images/…`, which is what every post
+here uses:
 
 ```markdown
-![The effect cleanup order](/images/react-lifecycle.png)
+![The effect cleanup order](./images/react-lifecycle.png)
 ```
 
-Write `/images/…`, never `/blog/images/…`. The site root is `/blog/` (derived from
-`url:` in [_config.yml](_config.yml)) and hexo-renderer-marked prepends it
-automatically; hardcoding it yields `/blog/blog/`.
+Never write `/blog/images/…`. The site root is `/blog/` (derived from `url:` in
+[_config.yml](_config.yml)) and hexo-renderer-marked prepends it automatically;
+hardcoding it yields `/blog/blog/`.
+
+`./images/foo.png` renders as `/blog/./images/foo.png` — the `./` is cosmetic, and
+browsers normalise it to the same URL that a bare `/images/foo.png` produces. Both forms
+work; `./images/…` is the house style.
 
 Every image in a post is automatically wrapped in a lightbox link, with its **alt text
 used as a hover caption** — no extra syntax. The caption is hover-only, so it will not
