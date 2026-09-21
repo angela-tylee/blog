@@ -31,9 +31,37 @@ pnpm clean      # clear cache (db.json) and public/
 
 ## Commands
 
-[Commands | Hexo](https://hexo.io/docs/commands)
+Reference: [Commands | Hexo](https://hexo.io/docs/commands)
 
-`hexo new --path <scaffold/lang/file-name> "Post Title"`
+A post's life cycle, start to finish:
+
+```bash
+pnpm exec hexo new draft --path <lang>/<file-name> "Post Title"   # create
+pnpm server:draft                                                 # preview
+pnpm exec hexo publish <lang>/<file-name>                         # publish
+```
+
+### Creating a draft
+
+Always pass `--path`, never a bare title. Hexo slugizes the title, so
+`hexo new draft "zh-tw/my-post"` collapses into `_drafts/zh-tw-my-post.md` — a flat
+file with a hyphen, not a file nested under the language folder. `--path` is handed
+straight to `post.create()` untouched.
+
+```bash
+pnpm exec hexo new draft --path zh-tw/my-post "我的標題"
+pnpm exec hexo new draft --path en/my-post "My Title"
+```
+
+`pnpm server:draft` runs the dev server with `--draft`, so drafts render alongside
+published posts.
+
+### Publishing a draft
+
+```bash
+pnpm exec hexo publish zh-tw/javascript-this     # → source/_posts/zh-tw/javascript-this.md
+pnpm exec hexo publish en/expression-statement   # → source/_posts/en/expression-statement.md
+```
 
 ## Variables
 
@@ -66,7 +94,7 @@ Reference: [Hexo - Variables](https://hexo.io/docs/variables)
 
 Reference: [Hexo - Tag Plugin](https://hexo.io/docs/tag-plugins)
 
-Four colored callout types, each with an icon badge on the left border:
+Seven colored callout types, each with an icon badge on the left border:
 
 ```
 {% colorquote warning %}
@@ -80,6 +108,9 @@ Hooks must not be called conditionally.
 | `success` | green | check |
 | `warning` | yellow | question mark |
 | `danger` | red | exclamation mark |
+| `glossary` | pink | question mark |
+| `tips` | purple | lightbulb |
+| `appendix` | grey | i |
 
 Markdown works inside the block. This is the theme's own `colorquote` tag, registered
 in [themes/minos/scripts/99_tags.js](themes/minos/scripts/99_tags.js) and styled in
@@ -183,15 +214,20 @@ Add snippet to `keybindings.json`
 ### Images
 
 Put image files in `source/images/` — anything under `source/` not prefixed with `_`
-is copied to `public/` as-is. Reference them root-relative:
+is copied to `public/` as-is. Reference them as `./images/…`, which is what every post
+here uses:
 
 ```markdown
-![The effect cleanup order](/images/react-lifecycle.png)
+![The effect cleanup order](./images/react-lifecycle.png)
 ```
 
-Write `/images/…`, never `/blog/images/…`. The site root is `/blog/` (derived from
-`url:` in [_config.yml](_config.yml)) and hexo-renderer-marked prepends it
-automatically; hardcoding it yields `/blog/blog/`.
+Never write `/blog/images/…`. The site root is `/blog/` (derived from `url:` in
+[_config.yml](_config.yml)) and hexo-renderer-marked prepends it automatically;
+hardcoding it yields `/blog/blog/`.
+
+`./images/foo.png` renders as `/blog/./images/foo.png` — the `./` is cosmetic, and
+browsers normalise it to the same URL that a bare `/images/foo.png` produces. Both forms
+work; `./images/…` is the house style.
 
 Every image in a post is automatically wrapped in a lightbox link, with its **alt text
 used as a hover caption** — no extra syntax. The caption is hover-only, so it will not
@@ -217,6 +253,25 @@ To use a separate thumbnail and full-size image, supply your own link and keep t
 <a class="gallery-item" href="/images/diagram-full.png">
   <img src="/images/diagram-thumb.png">
 </a>
+```
+
+### Videos (iframe)
+
+Reference: [Hexo - Tag Plugins § Iframe](https://hexo.io/docs/tag-plugins#Iframe)
+
+Hexo's built-in tag:
+
+```
+{% iframe https://www.youtube.com/embed/VIDEO_ID 600 400 %}
+```
+
+renders to a plain `<iframe>`. Drafts converted from Notion/Obsidian keep that tag
+as a commented-out reference next to a hand-written `<iframe>` with the same
+`src`/size, since the hand-written tag is the form actually shipped:
+
+```html
+<!-- {% iframe https://www.youtube.com/embed/VIDEO_ID 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" width="600" height="400" allowfullscreen></iframe>
 ```
 
 ### Escaping template syntax
@@ -268,7 +323,7 @@ Two built-in alternatives, for completeness:
 
 | Method | Effect |
 | --- | --- |
-| Move to `source/_drafts/` | Same as `_archive`, but reversible with `pnpm exec hexo publish <slug>`, and rendered by `pnpm server --draft`. Use it for a post you mean to rework and republish, not one you are retiring. |
+| Move to `source/_drafts/` | Same as `_archive`, but reversible with `pnpm exec hexo publish <lang>/<file-name>` (see [Publishing a draft](#publishing-a-draft)), and rendered by `pnpm server:draft`. Use it for a post you mean to rework and republish, not one you are retiring. |
 | `published: false` in front-matter | Same as `_archive`, without moving the file. Works, but is undocumented upstream. |
 
 ## Configuration
@@ -282,6 +337,15 @@ Theme settings belong in `_config.minos.yml` at the repo root, **not** in
 `themes/minos/_config.yml`. Hexo v5+ merges a root-level `_config.[theme].yml`
 over the theme's own config, and the theme repo gitignores its internal
 `_config.yml` — anything written there is untracked and will be lost.
+
+### Translations (the `__()` helper)
+
+UI strings in templates come from
+[themes/minos/languages/\*.yml](themes/minos/languages), one file per
+language, keyed by dotted paths like `nav.toc`. A page's language is its
+front-matter `lang`, else the `:lang` segment of its path (`i18n_dir` in
+[_config.yml](_config.yml)), else the first entry of `language`. That
+language (plus fallbacks) is what `<%= __('nav.toc') %>` resolves against.
 
 ## Changing the theme
 
@@ -335,3 +399,4 @@ See [Configuration](#configuration).
 - [ ] Vender themes/minos as direct folder or keep it submodule
 - [ ] Sass `legacy-js-api` warning -> swap to hexo-renderer-dartsass
 - [ ] add `updated` date https://hexo.io/docs/variables
+- [ ] image storage

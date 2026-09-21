@@ -1,9 +1,19 @@
 ---
 title: 表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
-date: 2025-04-17 23:03:16
 categories: Technology
+date: 2025-04-17 23:03:16
+created: 2025-04-17 23:03:16
 tags:
 ---
+
+
+{% colorquote appendix %}
+學習重點：
+
+- 表達式 (expression) 和陳述式 (statement) 是什麼，如何區分？
+- 函式表達式 (function expression) 和函式陳述式 (function statement) 是什麼？用途有什麼差異？
+{% endcolorquote %}
+
 
 ## 表達式與陳述式是什麼？
 
@@ -35,13 +45,15 @@ JavaScript （以及大部分的程式語言）的語法可依據是否回傳值
 所謂是否會回傳值，可以將一段程式碼丟進 console 中，看看是否有值回傳
 
 表達式 (expression) 會看到值回傳
+![](./images/expression-console.png)
 
 陳述式 (statement) 則沒有回傳值，所以只會看到 console 回傳 `undefined` 
+![](./images/statement-console.png)
 
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？*(work in progress)*...
 {% endcolorquote %}
 
 關於表達式 (expression) 和陳述式 (statement) 的差異再看一些 MDN 和 Wikipedia 上的敘述：
@@ -80,13 +92,13 @@ JavaScript （以及大部分的程式語言）的語法可依據是否回傳值
 例如 `if...else` 
 在讀懂 expression 的前提下，便可以了解 if 的條件必須是可以回傳值的表達式，避免寫出 `SyntaxError`
 
-!if…else | MDN
+![](./images/if-else-condition-mdn.png)
 
-if…else | MDN
-
-!image.png
+![](./images/if-else-syntax-error-statement.png)
 
 例如 `Boolean()`
+
+![](./images/if-else-syntax-error-primitive-wrapper-object.png)
 
 例如 `JSX` 
 
@@ -101,6 +113,7 @@ return (
   </li>
 );
 ```
+[https://react.dev/learn/conditional-rendering#conditional-ternary-operator--](https://react.dev/learn/conditional-rendering#conditional-ternary-operator--)
 
 ## 函式表達式與函式陳述式
 
@@ -120,9 +133,9 @@ return (
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式物件：**型別：型別的轉換 (Type Conversion) 與比較、真假值**
+函式物件：*{% post_link zh-tw/type-conversion-truthy-and-falsy 型別：型別的轉換 (Type Conversion) 與比較、真假值 %}*
 
-一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式**
+一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 {% endcolorquote %}
 
 接下來就帶到函式表達式與函式陳述式的不同，先從基本語法結構來看：
@@ -197,7 +210,7 @@ greet();
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+*{% post_link zh-tw/scope-hoist-shadowing 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式 %}*
 {% endcolorquote %}
 
 ### 具名 vs 匿名
@@ -241,7 +254,7 @@ greet();
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式：封裝（好的封裝）、閉包 Counter II
+函式：封裝（好的封裝）、閉包 Counter II *(work in progress)*...
 {% endcolorquote %}
 
 最後補充一點：
@@ -250,10 +263,12 @@ greet();
 
 （翻閱 MDN 就會發現箭頭函式本來就是 “function expression”（函式表達式）的簡略寫法，而不是所有函式寫法的語法糖）
 
+![](./images/expression-arrow-function.png)
+
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**函式：一級函式、高階函式、回呼函式**
+**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 
 箭頭函式的引用原因、使用時機
 {% endcolorquote %}
@@ -276,10 +291,8 @@ greet();
 
 ## 參考資料
 
-https://en.wikipedia.org/wiki/Statement_(computer_science)
-
-https://en.wikipedia.org/wiki/Expression_(computer_science)
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
-
-《帶你無痛提升 JavaScript 面試力》Ch2
+- https://en.wikipedia.org/wiki/Statement_(computer_science)
+- https://en.wikipedia.org/wiki/Expression_(computer_science)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
+- https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
+- 《帶你無痛提升 JavaScript 面試力》Ch2

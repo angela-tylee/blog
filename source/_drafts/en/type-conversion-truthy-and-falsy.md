@@ -5,6 +5,16 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- The 8 types of JavaScript
+- Methods of Type Conversion: Explicit coercion, Implicit coercion
+- Primitive Wrapper Objects
+- Rules for comparing types: Loose equality, strict equality.
+- True and False Values
+{% endcolorquote %}
+
 ## JavaScript has 8 Data Types
 
  JavaScript has 8 types: 7 primitive data types and 1 object data type.
@@ -41,7 +51,7 @@ tags:
 
  Types can be verified with the `typeof` operator
 
-!image.png
+![](./images/typeof.png)
 
 ### Pitfalls of `typeof`
 
@@ -65,10 +75,12 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
  As we all know, JavaScript is a loosely typed language, you don't need to specify the type of the variable when you declare it, you can change the type freely later, and JavaScript will convert the type "by itself" during compilation (what the hell?!).
 
+![](./images/it-was-a-disaster.gif)
+
 {% colorquote info %}
 **References / Extended Reading**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** *(work in progress)*...
 {% endcolorquote %}
 
  The advantage is that it's easy and fast to write, and saves a lot of trouble; the disadvantage is that if you don't understand the conversion rules, you're likely to encounter unintended errors!
@@ -198,9 +210,9 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 
  Array of classes:
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 *(work in progress)*...
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+**DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes** *(work in progress)*...
 {% endcolorquote %}
 
 ## Type Comparison
@@ -249,7 +261,7 @@ null === undefined // false：型別不同
 {% colorquote info %}
 **References / Extended Reading**
 
- Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+ Call by Sharing: 物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）*(work in progress)*...
 {% endcolorquote %}
 
 - `null`, `undefined`, `NaN`
@@ -284,7 +296,7 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 {% colorquote info %}
 **Reference / Extended Reading**
 
-is not defined、undefined、NAN、null
+is not defined、undefined、NAN、null *(work in progress)*...
 {% endcolorquote %}
 
 ## True, False
@@ -307,7 +319,7 @@ Boolean(function(){})   // true
 {% colorquote info %}
 **Reference / Extended Reading**
 
- Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||**
+ Ternary Operators, II && Operators **Operators 運算子：Prefix & Postfix、&& ||** *(work in progress)*...
 {% endcolorquote %}
 
 ## Summary
@@ -358,26 +370,15 @@ Boolean(function(){})   // true
 
 ## References
 
- [^1] https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
-
- [^2] https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
-
- [^3] https://javascriptrefined.io/the-wrapper-object-400311b29151
-
- [^4] https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
-
- [^5] https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
-
- [^6] https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
-
-https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
-
-https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
-
-https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
-
-https://javascript.info/primitives-methods
-
-https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
-
-https://www.cythilya.tw/2018/10/15/coercion/
+- [^1] https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof
+- [^2] https://blog.stackademic.com/primitives-and-wrapper-objects-in-javascript-70212c7fcb33
+- [^3] https://javascriptrefined.io/the-wrapper-object-400311b29151
+- [^4] https://library.fridoverweij.com/docs/jstutorial/primitive_wrapper_objects.html#autoboxing
+- [^5] https://www.javascripttutorial.net/javascript-primitive-wrapper-types/
+- [^6] https://zh.wikipedia.org/zh-tw/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
+- https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
+- https://developer.mozilla.org/en-US/docs/Glossary/Primitive#autoboxing_primitive_wrapper_objects_in_javascript
+- https://javascript.info/primitives-methods
+- https://en.wikipedia.org/wiki/Boxing_(computer_programming)#Boxing
+- https://www.cythilya.tw/2018/10/15/coercion/

@@ -5,6 +5,16 @@ categories: Technology
 tags:
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- Function Scope, Block Scope
+- Hoisting
+- Shadowing
+- TDZ (Temporary Dead Zone)
+- Lexical Scope
+{% endcolorquote %}
+
 Let's start with some contextual questions:
 
  (From Hexagon Kasper's book, "How to Improve Your JavaScript Interviewing Skills Without Pain")
@@ -94,17 +104,13 @@ fn2();
 - Function Scope: the variable declared by `var`.
 - Block Scope: `let`, `const` declared variables
 
-! Function Scope
+Function Scope:
+![](./images/function-scope.png)
 
- Function Scope
+Block Scope:
 
-! Block Scope
-
- Block Scope
-
-! Block Scope
-
- Block Scope
+![](./images/block-scope.png)
+![](./images/block-scope-for-loop.png)
 
 {% colorquote tips %}
 **Tips / Additional Knowledge**
@@ -174,7 +180,7 @@ console.log(x); // 3
 
  Only the declaration part of a variable is promoted, the assignment paragraph stays in place.
 
-!variable-declaration-assignment.png
+![](./images/variable-declaration-assignment.png)
 
  Example:
 
@@ -252,16 +258,15 @@ fn(); // '恩娣'
 {% colorquote info %}
 **Extended Reading**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link en/var-let-const-difference Variable declaration and the difference between var, let, const %}*
 
-表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
+*{% post_link en/expression-statement Expression vs Statement, Function Statement vs Function Expression %}*
 {% endcolorquote %}
 
  See the Udacity explanatory video for a clear visual demonstration:
 
- Source: [Intro to JavaScript | Udacity](https://youtu.be/8z-HSS34dsM)
-
- Source: Intro to JavaScript | Udacity
+<!-- {% iframe https://www.youtube.com/embed/8z-HSS34dsM 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="400" height="300" allowfullscreen></iframe>
 
 ### Why is it important to have a lifted design?
 
@@ -378,7 +383,8 @@ fn2(); // 恩娣
 {% colorquote info %}
 **References / Extended Reading**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link en/var-let-const-difference Variable declaration and the difference between var, let, const %}*
+
 {% endcolorquote %}
 
 {% colorquote glossary %}
@@ -461,18 +467,11 @@ let count = 1; // end of TDZ
 
 ## References
 
-https://www.w3schools.com/js//js_scope.asp
-
-https://developer.mozilla.org/en-US/docs/Glossary/Scope
-
-https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
-
-https://www.udacity.com/enrollment/ud803
-
-*Ch 1 Variables and Scopes in the Painless JavaScript Interviewing Power Guide*
-
-https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
-
-https://www.geeksforgeeks.org/static-and-dynamic-scoping/
+- https://www.w3schools.com/js//js_scope.asp
+- https://developer.mozilla.org/en-US/docs/Glossary/Scope
+- https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
+- https://www.udacity.com/enrollment/ud803
+- *Ch 1 Variables and Scopes in the Painless JavaScript Interviewing Power Guide*
+- https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope
+- https://www.geeksforgeeks.org/static-and-dynamic-scoping/

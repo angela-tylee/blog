@@ -1,23 +1,28 @@
 ---
 title: this 的指向：什麼時候會用到 this？要怎麼用得正確？
-date: 2025-05-05 23:09:21
 categories: Technology
+excerpt: >-
+  <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一個 JavaScript 的關鍵字
+  (keyword)，通常用以代指呼叫函式時函式前的物件</p><p>然而 `this`
+  在不同執行環境下所指向的值也會有所不同</p>以下先列舉常見的實戰用法：
+date: 2025-05-05 23:09:21
+created: 2025-05-05 23:09:21
 tags:
-excerpt: <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一個 JavaScript 的關鍵字 (keyword)，通常用以代指呼叫函式時函式前的物件</p><p>然而 `this` 在不同執行環境下所指向的值也會有所不同</p>以下先列舉常見的實戰用法：
-
 ---
 
-> 學習重點：
-> 
-> - this 的指向與實戰情境
-> - 預設綁定 (default binding)、隱含綁定 (implicit binding)、明確綁定 (explicit binding)
-> - 箭頭函式下的 this 爲什麼特別？
-> - 嚴格模式 (use strict) 下的 this
+{% colorquote appendix %}
+學習重點：
 
-> 必備前章知識：
-> - **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
-> - 箭頭函式的引用原因、使用時機
-> 
+- this 的指向與實戰情境
+- 預設綁定 (default binding)、隱含綁定 (implicit binding)、明確綁定 (explicit binding)
+- 箭頭函式下的 this 爲什麼特別？
+- 嚴格模式 (use strict) 下的 this
+
+- 必備前章知識：
+- **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+- 箭頭函式的引用原因、使用時機
+{% endcolorquote %}
+
 
 ## 為什麼要了解 this？實戰常見的 this
 
@@ -252,9 +257,9 @@ const obj = {
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-靜態作用域：**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+靜態作用域：*{% post_link zh-tw/scope-hoist-shadowing 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式 %}*
 
-箭頭函式：箭頭函式的引用原因、使用時機
+箭頭函式：箭頭函式的引用原因、使用時機 *(work in progress)*...
 {% endcolorquote %}
 
 ### 明確綁定 / 顯式綁定 (Explicit Binding) ：Call, Apply, Bind
@@ -319,32 +324,18 @@ boundGreet();
 
 ## 參考資料
 
-*《帶你無痛提升面試力》*5.3 this
-
-[1] https://web.dev/learn/javascript/functions/this#new-binding
-
-[2] https://www.cythilya.tw/2018/10/23/this/
-
-[3] https://kuro.tw/posts/2017/10/12/What-is-THIS-in-JavaScript-%E4%B8%8A/
-
-[4] https://kuro.tw/posts/2017/10/17/What-s-THIS-in-JavaScript-%E4%B8%AD/
-
-[5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
-
-[5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
-
-https://github.com/getify/You-Dont-Know-JS
-
-https://www.w3schools.com/js/js_this.asp
-
-https://www.geeksforgeeks.org/javascript-this-keyword/
-
-https://dev.to/nikolasbarwicki/is-this-keyword-a-problem-1ind
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#description
-
-https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
-
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#what_is_this
-
-https://medium.com/analytics-vidhya/javascripts-this-keyword-strict-bind-call-apply-79fc35039832
+- *《帶你無痛提升面試力》*5.3 this
+- [1] https://web.dev/learn/javascript/functions/this#new-binding
+- [2] https://www.cythilya.tw/2018/10/23/this/
+- [3] https://kuro.tw/posts/2017/10/12/What-is-THIS-in-JavaScript-%E4%B8%8A/
+- [4] https://kuro.tw/posts/2017/10/17/What-s-THIS-in-JavaScript-%E4%B8%AD/
+- [5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
+- [5] https://kuro.tw/posts/2017/10/20/What-is-THIS-in-JavaScript-%E4%B8%8B/
+- https://github.com/getify/You-Dont-Know-JS
+- https://www.w3schools.com/js/js_this.asp
+- https://www.geeksforgeeks.org/javascript-this-keyword/
+- https://dev.to/nikolasbarwicki/is-this-keyword-a-problem-1ind
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#description
+- https://javascript.plainenglish.io/how-well-do-you-know-this-ce4355bc9b
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#what_is_this
+- https://medium.com/analytics-vidhya/javascripts-this-keyword-strict-bind-call-apply-79fc35039832
