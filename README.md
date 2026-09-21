@@ -31,9 +31,37 @@ pnpm clean      # clear cache (db.json) and public/
 
 ## Commands
 
-[Commands | Hexo](https://hexo.io/docs/commands)
+Reference: [Commands | Hexo](https://hexo.io/docs/commands)
 
-`hexo new --path <scaffold/lang/file-name> "Post Title"`
+A post's life cycle, start to finish:
+
+```bash
+pnpm exec hexo new draft --path <lang>/<file-name> "Post Title"   # create
+pnpm server:draft                                                 # preview
+pnpm exec hexo publish <lang>/<file-name>                         # publish
+```
+
+### Creating a draft
+
+Always pass `--path`, never a bare title. Hexo slugizes the title, so
+`hexo new draft "zh-tw/my-post"` collapses into `_drafts/zh-tw-my-post.md` — a flat
+file with a hyphen, not a file nested under the language folder. `--path` is handed
+straight to `post.create()` untouched.
+
+```bash
+pnpm exec hexo new draft --path zh-tw/my-post "我的標題"
+pnpm exec hexo new draft --path en/my-post "My Title"
+```
+
+`pnpm server:draft` runs the dev server with `--draft`, so drafts render alongside
+published posts.
+
+### Publishing a draft
+
+```bash
+pnpm exec hexo publish zh-tw/javascript-this     # → source/_posts/zh-tw/javascript-this.md
+pnpm exec hexo publish en/expression-statement   # → source/_posts/en/expression-statement.md
+```
 
 ## Variables
 
@@ -287,7 +315,7 @@ Two built-in alternatives, for completeness:
 
 | Method | Effect |
 | --- | --- |
-| Move to `source/_drafts/` | Same as `_archive`, but reversible with `pnpm exec hexo publish <slug>`, and rendered by `pnpm server --draft`. Use it for a post you mean to rework and republish, not one you are retiring. |
+| Move to `source/_drafts/` | Same as `_archive`, but reversible with `pnpm exec hexo publish <lang>/<file-name>` (see [Publishing a draft](#publishing-a-draft)), and rendered by `pnpm server:draft`. Use it for a post you mean to rework and republish, not one you are retiring. |
 | `published: false` in front-matter | Same as `_archive`, without moving the file. Works, but is undocumented upstream. |
 
 ## Configuration
