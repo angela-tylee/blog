@@ -1,29 +1,40 @@
-# Hexo conversion conventions
+---
+name: notes-to-hexo
+description: Converts a Notion export or an Obsidian note into a Hexo draft for this blog — source callouts become {% colorquote %} blocks, headings are downgraded one level, images move into source/images/, embeds become iframes, and 參考資料 becomes a bullet list. Use when the user pastes Notion or Obsidian content, points at an export file or a vault note, or asks to turn either into a blog post or draft.
+---
 
-House rules that apply to every note converted into a post on this blog, whatever the
-source. The source-specific rules live in each skill's `SKILL.md`.
+# Notes → Hexo
 
-Authoritative reference for everything here: [README.md](../../../README.md).
+## Workflow
 
-## Contents
+```
+- [ ] Step 1: Identify the source and read its reference file
+- [ ] Step 2: Create the draft with the CLI
+- [ ] Step 3: Move images into source/images/
+- [ ] Step 4: Convert source-specific syntax
+- [ ] Step 5: Apply the house conventions below
+- [ ] Step 6: Build and preview
+```
 
-- Where the file goes
-- Front-matter
-- Heading levels
-- Callouts (`colorquote`)
-- Opening 學習重點 block
-- Images
-- Videos (iframe)
-- 參考資料 / 延伸閱讀
-- Linking to another post
-- Escaping template syntax
-- Verification
+## Step 1: Source-specific syntax
 
-## Where the file goes
+Read the one file that matches the source. Each covers the syntax only that tool emits —
+callout mapping, links, images and the leftovers to strip.
+
+**Notion export** (`<aside>` callouts, `%20` in paths, a metadata table at the top) →
+See [reference/notion.md](reference/notion.md)
+
+**Obsidian note** (`[[wikilinks]]`, `> [!type]` callouts, vault front-matter) →
+See [reference/obsidian.md](reference/obsidian.md)
+
+If the source is ambiguous, `[[` decides it: Obsidian. Content pasted with no file and no
+distinguishing syntax needs only the house conventions below.
+
+## Step 2: Where the file goes
 
 A converted note lands in `source/_drafts/<lang>/<slug>.md`, never straight in
-`source/_posts/`. `<lang>` is `zh-tw` or `en`. Create it with the CLI so the
-front-matter scaffold is applied:
+`source/_posts/`. `<lang>` is `zh-tw` or `en`. Create it with the CLI so the front-matter
+scaffold is applied:
 
 ```bash
 pnpm exec hexo new draft --path zh-tw/my-post "我的標題"
@@ -37,21 +48,37 @@ Publishing is the author's call, not part of a conversion. When asked:
 pnpm exec hexo publish zh-tw/my-post
 ```
 
-## Front-matter
+## Step 3: Images
+
+Image files go in `source/images/`, flat, with kebab-case names. Reference them:
+
+```markdown
+![Descriptive alt text](./images/block-scope.png)
+```
+
+Every image is wrapped in a lightbox whose **hover caption is the alt text**, so write
+real alt text rather than leaving it empty. The caption never appears on touch devices —
+never put essential information there alone.
+
+Never write `/blog/images/…`. The `/blog/` site root is prepended at render time.
+
+## Step 5: House conventions
+
+### Front-matter
 
 The scaffold gives `title`, `date`, `categories`, `tags`. Fill `title` from the note's
-own H1 and drop that H1 from the body. Leave `categories: Technology` unless the note
-is clearly something else. Leave `tags:` empty rather than inventing tags.
+own H1 and drop that H1 from the body. Leave `categories: Technology` unless the note is
+clearly something else. Leave `tags:` empty rather than inventing tags.
 
 Insert `<!-- more -->` after the first two or three paragraphs — without it the whole
 post renders on the home page.
 
-## Heading levels
+### Heading levels
 
 Downgrade every heading by one: `#` → `##`, `##` → `###`, and so on. The post title is
 already rendered as the page's H1 from front-matter, so the body starts at `##`.
 
-## Callouts (`colorquote`)
+### Callouts
 
 Source callouts become the theme's `colorquote` tag:
 
@@ -74,9 +101,10 @@ Seven types, defined in
 | `tips` | A practical tip |
 | `appendix` | Supplementary material, 學習重點 |
 
-Pick the type from what the callout says. When the source gives no signal, use `info`.
+The per-source reference file maps that tool's callout types onto this table. When the
+source gives no signal, use `info`.
 
-## Opening 學習重點 block
+### Opening 學習重點 block
 
 Posts open with an `appendix` callout listing what the reader will learn, before the
 first `##` heading:
@@ -90,24 +118,10 @@ first `##` heading:
 {% endcolorquote %}
 ```
 
-If the note has no equivalent section, draft one from its headings and tell the author
-it was written rather than carried over.
+If the note has no equivalent section, draft one from its headings and tell the author it
+was written rather than carried over.
 
-## Images
-
-Image files go in `source/images/`, flat, with kebab-case names. Reference them:
-
-```markdown
-![Descriptive alt text](./images/block-scope.png)
-```
-
-Every image is wrapped in a lightbox whose **hover caption is the alt text**, so write
-real alt text rather than leaving it empty. The caption never appears on touch devices —
-never put essential information there alone.
-
-Never write `/blog/images/…`. The `/blog/` site root is prepended at render time.
-
-## Videos (iframe)
+### Videos (iframe)
 
 Keep Hexo's built-in tag commented out beside a hand-written `<iframe>` with the same
 `src` and size. The hand-written tag is the form actually shipped:
@@ -117,10 +131,10 @@ Keep Hexo's built-in tag commented out beside a hand-written `<iframe>` with the
 <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" width="600" height="400" allowfullscreen></iframe>
 ```
 
-A plain YouTube watch URL (`youtube.com/watch?v=ID` or `youtu.be/ID`) must be rewritten
-to the `/embed/ID` form.
+A plain YouTube watch URL (`youtube.com/watch?v=ID` or `youtu.be/ID`) must be rewritten to
+the `/embed/ID` form.
 
-## 參考資料 / 延伸閱讀
+### 參考資料 / 延伸閱讀
 
 Two distinct things, handled differently.
 
@@ -146,7 +160,7 @@ up, inside an `info` callout:
 {% endcolorquote %}
 ```
 
-## Linking to another post
+### Linking to another post
 
 Use `{% post_link <lang>/<slug> %}` — never a hand-written URL. It resolves the href
 through `url_for` and fails the build if the target is gone.
@@ -158,7 +172,7 @@ languages.
 If the referenced post does not exist yet, leave the prose and mark it
 `*(work in progress)*` rather than writing a `post_link` that breaks `pnpm build`.
 
-## Escaping template syntax
+### Escaping template syntax
 
 A post that discusses Hexo tags needs literal `{%` that Hexo must not execute:
 
@@ -166,9 +180,9 @@ A post that discusses Hexo tags needs literal `{%` that Hexo must not execute:
 <escape>{% colorquote info %}</escape>
 ```
 
-## Verification
+## Step 6: Verification
 
-After converting, run the build and fix what it reports:
+Run the build and fix what it reports:
 
 ```bash
 pnpm build
@@ -182,3 +196,5 @@ pnpm server:draft   # http://localhost:4000, renders drafts
 
 Check in the rendered page that callouts show their colored badge, images load, and the
 iframe plays. If the build fails, fix and re-run before handing the draft back.
+
+Full theme reference, beyond what conversion needs: [README.md](../../../README.md).
