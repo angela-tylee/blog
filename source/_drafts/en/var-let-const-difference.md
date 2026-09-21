@@ -136,12 +136,12 @@ What is meant by "return"?
 - A `var` declared in the global scope is scoped to the entire global scope.
 - The scope of a `var` declared in a function is the entire scope of the function.
     
-    !codesnap2.png
+    ![](./images/function-scope.png)
     
 
  In other words, if `var` is declared in a function, but the variable is mentioned outside the function, then it cannot be found.
 
-!image.png
+![](./images/is-not-defined.png)
 
 ```jsx
 function getData() {
@@ -182,9 +182,8 @@ console.log(window.c) // undefined
 
  For example: if, for loop, function all contain blocks.
 
-!codesnap.png
-
-!block-scope-for-loop.png
+![](./images/block-scope.png)
+![](./images/block-scope-for-loop.png)
 
 {% colorquote tips %}
 **Tips / Supplementary Knowledge**
@@ -218,7 +217,7 @@ console.log(j); // ReferenceError: Cannot access 'j' before initialization
 
  A complete declaration of a variable is divided into two parts: declaration and assignment.
 
-!variable-declaration-assignment.png
+![](./images/variable-declaration-assignment.png)
 
  When JavaScript is executed, it goes through two main phases: **Creation** Phase and **Execution** Phase.
 

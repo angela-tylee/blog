@@ -219,6 +219,25 @@ To use a separate thumbnail and full-size image, supply your own link and keep t
 </a>
 ```
 
+### Videos (iframe)
+
+Reference: [Hexo - Tag Plugins § Iframe](https://hexo.io/docs/tag-plugins#Iframe)
+
+Hexo's built-in tag:
+
+```
+{% iframe https://www.youtube.com/embed/VIDEO_ID 600 400 %}
+```
+
+renders to a plain `<iframe>`. Drafts converted from Notion/Obsidian keep that tag
+as a commented-out reference next to a hand-written `<iframe>` with the same
+`src`/size, since the hand-written tag is the form actually shipped:
+
+```html
+<!-- {% iframe https://www.youtube.com/embed/VIDEO_ID 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" width="600" height="400" allowfullscreen></iframe>
+```
+
 ### Escaping template syntax
 
 Writing about Hexo or Nunjucks means writing literal `{%` in a post, which Hexo will
@@ -283,6 +302,15 @@ Theme settings belong in `_config.minos.yml` at the repo root, **not** in
 over the theme's own config, and the theme repo gitignores its internal
 `_config.yml` — anything written there is untracked and will be lost.
 
+### Translations (the `__()` helper)
+
+UI strings in templates come from
+[themes/minos/languages/\*.yml](themes/minos/languages), one file per
+language, keyed by dotted paths like `nav.toc`. A page's language is its
+front-matter `lang`, else the `:lang` segment of its path (`i18n_dir` in
+[_config.yml](_config.yml)), else the first entry of `language`. That
+language (plus fallbacks) is what `<%= __('nav.toc') %>` resolves against.
+
 ## Changing the theme
 
 [themes/minos](themes/minos) is a fork — [angela-tylee/hexo-theme-minos-clone](https://github.com/angela-tylee/hexo-theme-minos-clone),
@@ -335,3 +363,4 @@ See [Configuration](#configuration).
 - [ ] Vender themes/minos as direct folder or keep it submodule
 - [ ] Sass `legacy-js-api` warning -> swap to hexo-renderer-dartsass
 - [ ] add `updated` date https://hexo.io/docs/variables
+- [ ] image storage

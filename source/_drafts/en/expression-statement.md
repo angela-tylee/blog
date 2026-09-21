@@ -35,8 +35,10 @@ tags:
  To see if a value is returned, you can throw a piece of code into a console and see if a value is returned.
 
  expression will see the value returned.
+![](./images/expression-console.png)
 
  statement does not return values, so you will only see console return `undefined`. 
+![](./images/statement-console.png)
 
 {% colorquote info %}
 **Reference / Extended Reading**
@@ -73,7 +75,13 @@ tags:
 
  For example, `if... .else` If you understand the expression, you can understand that the if condition must be an expression that returns a value to avoid writing a `SyntaxError`.
 
+![](./images/if-else-condition-mdn.png)
+
+![](./images/if-else-syntax-error-statement.png)
+
  e.g. `Boolean()`
+
+![](./images/if-else-syntax-error-primitive-wrapper-object.png)
 
 For example, `JSX` 
 
@@ -88,6 +96,7 @@ return (
   </li>
 );
 ```
+[https://react.dev/learn/conditional-rendering#conditional-ternary-operator--](https://react.dev/learn/conditional-rendering#conditional-ternary-operator--)
 
 ## Function Expressions and Function Statements
 
@@ -237,6 +246,8 @@ greet();
 
  (Read MDN to find out that Arrow Function is a shortened form of "function expression", not the syntactic sugar that all functions are written in.
 
+![](./images/expression-arrow-function.png)
+
 {% colorquote info %}
 **References / Extended Reading**
 
@@ -266,4 +277,7 @@ greet();
 https://en.wikipedia.org/wiki/Statement_(computer_science)
 https://en.wikipedia.org/wiki/Expression_(computer_science)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function
+
+https://react.dev/learn/conditional-rendering#conditional-ternary-operator--
+
  Ch2 *of "Improve Your JavaScript Interviewing Skills Painlessly"*.

@@ -41,7 +41,7 @@ tags:
 
  Types can be verified with the `typeof` operator
 
-!image.png
+![](./images/typeof.png)
 
 ### Pitfalls of `typeof`
 
@@ -64,6 +64,8 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 ## Type Conversion / Type Coercion
 
  As we all know, JavaScript is a loosely typed language, you don't need to specify the type of the variable when you declare it, you can change the type freely later, and JavaScript will convert the type "by itself" during compilation (what the hell?!).
+
+![](./images/it-was-a-disaster.gif)
 
 {% colorquote info %}
 **References / Extended Reading**

@@ -146,12 +146,12 @@ let / const 變數宣告、箭頭函式（arrow functions）、樣板字面�
 - 在全域宣告的 `var` ，其作用域即是整個全域
 - 在函式中宣告的 `var` ，其作用域即是整個函式的範圍
     
-    !codesnap2.png
+    ![](./images/function-scope.png)
     
 
 換句話說，若 `var`在函式中宣告，但變數在函式外提及時，便無法查找到此變數
 
-!image.png
+![](./images/is-not-defined.png)
 
 ```jsx
 function getData() {
@@ -192,6 +192,9 @@ console.log(window.c) // undefined
 
 例如：if, for loop, function 都包含區塊
 
+![](./images/block-scope.png)
+![](./images/block-scope-for-loop.png)
+
 {% colorquote tips %}
 **小提示 / 補充知識**
 
@@ -223,6 +226,8 @@ console.log(j); // ReferenceError: Cannot access 'j' before initialization
 ### 提升(Hoist) 與變數初始值 (Initialize)
 
 一個完整的變數宣告分為宣告 (declaration)、賦值 (assignment) 兩個部分
+
+![](./images/variable-declaration-assignment.png)
 
 當 JavaScript 執行時，會經歷兩個主要的階段：**創造階段**（Creation Phase）和**執行階段**（Execution Phase）
 
@@ -267,7 +272,7 @@ var y;
 
 - `let` / `const` 在宣告前執行，出現報錯 `ReferenceError: Cannot access before initialization`
     
-    !image.png
+    ![](./images/cannot-access-before-initialization.png)
     
     ```jsx
     name = "John";

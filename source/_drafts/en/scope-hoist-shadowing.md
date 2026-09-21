@@ -94,17 +94,13 @@ fn2();
 - Function Scope: the variable declared by `var`.
 - Block Scope: `let`, `const` declared variables
 
-! Function Scope
+Function Scope:
+![](./images/function-scope.png)
 
- Function Scope
+Block Scope:
 
-! Block Scope
-
- Block Scope
-
-! Block Scope
-
- Block Scope
+![](./images/block-scope.png)
+![](./images/block-scope-for-loop.png)
 
 {% colorquote tips %}
 **Tips / Additional Knowledge**
@@ -174,7 +170,7 @@ console.log(x); // 3
 
  Only the declaration part of a variable is promoted, the assignment paragraph stays in place.
 
-!variable-declaration-assignment.png
+![](./images/variable-declaration-assignment.png)
 
  Example:
 
@@ -259,9 +255,8 @@ fn(); // '恩娣'
 
  See the Udacity explanatory video for a clear visual demonstration:
 
- Source: [Intro to JavaScript | Udacity](https://youtu.be/8z-HSS34dsM)
-
- Source: Intro to JavaScript | Udacity
+<!-- {% iframe https://www.youtube.com/embed/8z-HSS34dsM 600 400 %} -->
+<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="400" height="300" allowfullscreen></iframe>
 
 ### Why is it important to have a lifted design?
 
