@@ -202,8 +202,8 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 |  Object / Array → JSON | `JSON.stringify(value)` | `{a:1}` → `'{"a":1}'` |
 |  String → Array | `split()` | `"a,b".split(",")` → `["a", "b"]` |
 |  Array → String | `join()` | `["a", "b"].join("-")` → `"a-b"` |
-|  Object → Array | `Object.keys()Object.value()Object.entries()` | `Object.keys({a: 1, b: 2})` → `["a", "b"]Object.values({a: 1, b: 2})` → `[1, 2]Object.entries({a: 1})` → `[["a", 1]]` |
-|  Arrays / NodeList → Array | `Array.from()`, `spread...` |  |
+|  Object → Array | `Object.keys()`<br>`Object.value()`<br>`Object.entries()` | `Object.keys({a: 1, b: 2})` → `["a", "b"]`<br>`Object.values({a: 1, b: 2})` → `[1, 2]`<br>`Object.entries({a: 1})` → `[["a", 1]]` |
+|  Array-like / NodeList → Array | `Array.from()`<br>`spread...` |  |
 
 {% colorquote info %}
 **Reference / Extended Reading**
@@ -284,14 +284,14 @@ Number.isNaN(NaN)      // true，應改用 isNaN()檢驗
 null == undefined      // true，這兩者只與自己和彼此互相相等
 ```
 
-|  Loosely equal `==` | `null` | `undefined` | `NaN` |  `false NaN` | `0` | `false` |
+|  Loosely equal `==` | `null` | `undefined` | `NaN` |  `''` | `0` | `false` |
 | --- | --- | --- | --- | --- | --- | --- |
-| **`null`** |  ✅ |  ✅ |  ❌ |  null |  ❌ |  ❌ |
-| **`undefined`** |  ✅ |  ✅ |  ❌ |  ❌ |  undefined |  ✅ |
-| **`NaN`** |  undefined |  ❌ |  ❌ |  ❌ |  ❌ |  ❌ |
-| **`''`** |  ❌ |  ❌ |  ✅ |  ✅ |  ✅ |  ✅ |
-| **`0`** |  ❌ |  ✅ |  ❌ |  ✅ |  ✅ |  ✅ |
-| **`false`** |  ✅ |  false |  ✅ |  ✅ |  ✅ |  ✅ |
+| **`null`** |  ✅ |  ✅ |  ❌ |  ❌ |  ❌ |  ❌ |
+| **`undefined`** |  ✅ |  ✅ |  ❌ |  ❌ |  ❌ |  ❌ |
+| **`NaN`** |  ❌ |  ❌ |  ❌ |  ❌ |  ❌ |  ❌ |
+| **`''`** |  ❌ |  ❌ |  ❌ |  ✅ |  ✅ |  ✅ |
+| **`0`** |  ❌ |  ❌ |  ❌ |  ✅ |  ✅ |  ✅ |
+| **`false`** |  ❌ |  ❌ |  ❌ |  ✅ |  ✅ |  ✅ |
 
 {% colorquote info %}
 **Reference / Extended Reading**

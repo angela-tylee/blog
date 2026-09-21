@@ -203,12 +203,8 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 | Object / Array → JSON | `JSON.stringify(value)` | `{a:1}` → `'{"a":1}'` |
 | String → Array | `split()` | `"a,b".split(",")` → `["a", "b"]` |
 | Array → String | `join()` | `["a","b"].join("-")` → `"a-b"` |
-| Object → Array | `Object.keys()` 
-`Object.value()` 
-`Object.entries()` | `Object.keys({a: 1, b: 2})` → `["a", "b"]`
-`Object.values({a: 1, b: 2})` → `[1, 2]`
-`Object.entries({a: 1})` → `[["a", 1]]` |
-| 類陣列 / NodeList → Array | `Array.from()`, `spread...` |  |
+| Object → Array | `Object.keys()`<br>`Object.value()`<br>`Object.entries()` | `Object.keys({a: 1, b: 2})` → `["a", "b"]`<br>`Object.values({a: 1, b: 2})` → `[1, 2]`<br>`Object.entries({a: 1})` → `[["a", 1]]` |
+| 類陣列 / NodeList → Array | `Array.from()`<br>`spread...` |  |
 
 {% colorquote info %}
 **參考資料 / 延伸閱讀**

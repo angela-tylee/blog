@@ -267,17 +267,17 @@ greet();
 
 |  |  expression |  statement |
 | --- | --- | --- |
-|  ✅ Returns a value |  ✅ Return Value |  ❌ Does not return values |
+|  Returns a value |  ✅ Return Value |  ❌ Does not return values |
 |  Function |  Process Control |  Calculates the value |
-|  Syntax |  - Execute Functions - Pure Values - Variables - Operators - Function Expressions (see MDN for a complete list) |  - Variable declaration `var`, `let`, `const` - Process control ( `if...else`, `switch`, `for loop`, `try...catch` ) - import / export (see MDN for a complete list) |
+|  Syntax |  • Executed functions<br>• Pure values<br>• Variables<br>• Operators<br>• Function expressions<br>(see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators) for a complete list) |  • Variable declaration `var`, `let`, `const`<br>• Process control (`if...else`, `switch`, `for loop`, `try...catch`)<br>• import / export<br>(see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements) for a complete list) |
 
 |  |  function statement |  function expression |
 | --- | --- | --- |
 |  Syntax structure | `function greet() {}` | `const greet = function() {}` |
 |  Attributes |  statement |  expression |
-|  Elevation |  Full elevation, can be called anywhere |  only partial elevation of a variable declaration, can only be called after the declaration of a function |
+|  Hoisting |  Fully hoisted, can be called anywhere |  only the variable declaration is hoisted, can only be called after the function has been defined |
 |  Named / Anonymous |  Named |  Named / Anonymous |
-|  Usage Scenarios |  Functional expressions can be used in all cases except those where they are applicable. |  Where you need to send back values or closures, or use it as a callback or anonymous function. |
+|  Usage Scenarios |  Can be used anywhere except where a function expression is required |  Where you need to send back values or closures, or use it as a callback or anonymous function. |
 
 ## References
 
