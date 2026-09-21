@@ -362,10 +362,10 @@ let count = 1; // end of TDZ
 
 ## Summary
 
-|  |  var |  const var |  const |
+|  |  var |  let |  const |
 | --- | --- | --- | --- |
 |  Redeclare |  ✅ Can be redeclared |  ❌ Cannot redeclare `SyntaxError: Identifier 'x' has already been declared` |  ❌ Cannot be redeclared `SyntaxError: Identifier 'x' has already been declared` |
-|  Re-assignment |  ✅ Can be re-assigned |  ✅ Can be reassigned | `SyntaxError:` Identifier 'x' has already been declared ❌ Cannot be reassigned `TypeError: Assignment to constant variable` |
+|  Re-assignment |  ✅ Can be re-assigned |  ✅ Can be reassigned |  ❌ Cannot be reassigned `TypeError: Assignment to constant variable` |
 |  Scope |  Function Scope |  Block Scope |  Block Scope |
 |  Hoist |  ✅ Will Hoist |  ✅ Hoist (but will enter TDZ `Reference Error: Cannot access before initialization` ) |  ✅ Hoisted (but with TDZ `Reference Error: Cannot access before initialization` ) |
 |  Initialization |  undefined |  None, can't access before initialization |  No, Cannot access before initialization |
