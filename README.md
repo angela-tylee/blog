@@ -229,10 +229,26 @@ hardcoding it yields `/blog/blog/`.
 browsers normalise it to the same URL that a bare `/images/foo.png` produces. Both forms
 work; `./images/…` is the house style.
 
+When an image needs a fixed width, use an `<img>` tag instead — Markdown's `![]()` has
+no way to set one:
+
+```html
+<img src="../../images/react-lifecycle.png" width="500">
+```
+
+hexo-renderer-marked only prepends the `/blog/` root to `![]()` syntax; a raw `<img>` is
+passed through untouched, so its `src` must be a real relative path from the rendered
+page. With `i18n_dir: :lang` and `permalink: :title/`, a post renders at
+`/blog/<lang>/<title>/` — two directories below the site root — so `../../images/…` is
+correct; it mirrors the source file's own depth under `source/_posts/<lang>/` (or
+`source/_drafts/<lang>/`). `./images/…` on an `<img>` tag will 404.
+
 Every image in a post is automatically wrapped in a lightbox link, with its **alt text
-used as a hover caption** — no extra syntax. The caption is hover-only, so it will not
+used as a hover caption** — no extra syntax, and this applies the same way to `<img>`
+tags as to `![]()` syntax. The caption is hover-only, so it will not
 appear on touch devices; never put essential information there alone. Opt a single
-image out with `{.not-gallery-item}`.
+image out with `{.not-gallery-item}` on `![]()` syntax, or `class="not-gallery-item"`
+directly on an `<img>` tag.
 
 For several images as a justified grid, wrap them by hand — the blank lines matter,
 as they keep the images parsed as markdown:

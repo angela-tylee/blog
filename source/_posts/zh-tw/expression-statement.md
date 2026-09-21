@@ -45,10 +45,10 @@ JavaScript （以及大部分的程式語言）的語法可依據是否回傳值
 所謂是否會回傳值，可以將一段程式碼丟進 console 中，看看是否有值回傳
 
 表達式 (expression) 會看到值回傳
-![](./images/expression-console.png)
+<img src="../../images/expression-console.png" width="500">
 
 陳述式 (statement) 則沒有回傳值，所以只會看到 console 回傳 `undefined` 
-![](./images/statement-console.png)
+<img src="../../images/statement-console.png" width="500">
 
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
@@ -92,13 +92,13 @@ JavaScript （以及大部分的程式語言）的語法可依據是否回傳值
 例如 `if...else` 
 在讀懂 expression 的前提下，便可以了解 if 的條件必須是可以回傳值的表達式，避免寫出 `SyntaxError`
 
-![](./images/if-else-condition-mdn.png)
+<img src="../../images/if-else-condition-mdn.png" width="450">
 
-![](./images/if-else-syntax-error-statement.png)
+<img src="../../images/if-else-syntax-error-statement.png" width="450">
 
 例如 `Boolean()`
 
-![](./images/if-else-syntax-error-primitive-wrapper-object.png)
+<img src="../../images/if-else-syntax-error-primitive-wrapper-object.png" width="450">
 
 例如 `JSX` 
 
@@ -263,7 +263,7 @@ greet();
 
 （翻閱 MDN 就會發現箭頭函式本來就是 “function expression”（函式表達式）的簡略寫法，而不是所有函式寫法的語法糖）
 
-![](./images/expression-arrow-function.png)
+<img src="../../images/expression-arrow-function.png" width="500">
 
 {% colorquote info %}
 **參考資料 / 延伸閱讀**

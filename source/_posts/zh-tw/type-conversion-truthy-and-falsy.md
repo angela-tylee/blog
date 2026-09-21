@@ -52,7 +52,7 @@ JavaScript 共有 8 種型別：7 個原始型別 (primitive data type)、1 個�
 
 型別可以用 `typeof` 運算子來檢驗
 
-![](./images/typeof.png)
+<img src="../../images/typeof.png" width="500">
 
 ### `typeof` 的陷阱
 
@@ -76,7 +76,7 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 眾所皆知，JavaScript 是一個弱型別 (loosely typed) 語言，宣告時不用指定變數的型別、能在後續自由更換型別，JavaScript 也會在編譯的過程中依據需求「自行」轉換型別（什麼鬼？！）
 
-![](./images/it-was-a-disaster.gif)
+<img src="../../images/it-was-a-disaster.gif">
 
 {% colorquote info %}
 **參考資料 / 延伸閱讀**

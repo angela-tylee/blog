@@ -51,7 +51,7 @@ You will learn…
 
  Types can be verified with the `typeof` operator
 
-![](./images/typeof.png)
+<img src="../../images/typeof.png" width="500">
 
 ### Pitfalls of `typeof`
 
@@ -75,7 +75,7 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
  As we all know, JavaScript is a loosely typed language, you don't need to specify the type of the variable when you declare it, you can change the type freely later, and JavaScript will convert the type "by itself" during compilation (what the hell?!).
 
-![](./images/it-was-a-disaster.gif)
+<img src="../../images/it-was-a-disaster.gif">
 
 {% colorquote info %}
 **References / Extended Reading**

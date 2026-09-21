@@ -148,12 +148,13 @@ let / const 變數宣告、箭頭函式（arrow functions）、樣板字面�
 - 在全域宣告的 `var` ，其作用域即是整個全域
 - 在函式中宣告的 `var` ，其作用域即是整個函式的範圍
     
-    ![](./images/function-scope.png)
+    <img src="../../images/function-scope.png" width="400">
+
     
 
 換句話說，若 `var`在函式中宣告，但變數在函式外提及時，便無法查找到此變數
 
-![](./images/is-not-defined.png)
+<img src="../../images/is-not-defined.png" width="500">
 
 ```jsx
 function getData() {
@@ -194,8 +195,8 @@ console.log(window.c) // undefined
 
 例如：if, for loop, function 都包含區塊
 
-![](./images/block-scope.png)
-![](./images/block-scope-for-loop.png)
+<img src="../../images/block-scope.png" width="400">
+<img src="../../images/block-scope-for-loop.png" width="400">
 
 {% colorquote tips %}
 **小提示 / 補充知識**
@@ -229,7 +230,7 @@ console.log(j); // ReferenceError: Cannot access 'j' before initialization
 
 一個完整的變數宣告分為宣告 (declaration)、賦值 (assignment) 兩個部分
 
-![](./images/variable-declaration-assignment.png)
+<img src="../../images/variable-declaration-assignment.png" width="300">
 
 當 JavaScript 執行時，會經歷兩個主要的階段：**創造階段**（Creation Phase）和**執行階段**（Execution Phase）
 
@@ -274,7 +275,8 @@ var y;
 
 - `let` / `const` 在宣告前執行，出現報錯 `ReferenceError: Cannot access before initialization`
     
-    ![](./images/cannot-access-before-initialization.png)
+    <img src="../../images/cannot-access-before-initialization.png" width="500">
+
     
     ```jsx
     name = "John";

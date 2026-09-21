@@ -60,7 +60,20 @@ Every image is wrapped in a lightbox whose **hover caption is the alt text**, so
 real alt text rather than leaving it empty. The caption never appears on touch devices —
 never put essential information there alone.
 
-Never write `/blog/images/…`. The `/blog/` site root is prepended at render time.
+Never write `/blog/images/…`. The `/blog/` site root is prepended at render time — but
+only for `![]()` syntax.
+
+If an image needs a fixed width, use an `<img>` tag instead, since Markdown has no way to
+set one. A raw `<img>` is passed through untouched by the renderer, so it does **not**
+get the `/blog/` root prepended — `./images/…` will 404 on it. Use a path that mirrors
+the draft's own depth under `source/_drafts/<lang>/` instead:
+
+```html
+<img src="../../images/block-scope.png" width="400">
+```
+
+The lightbox still applies automatically; there's no `alt` attribute here, so no hover
+caption — add `alt="…"` if one is wanted.
 
 ## Step 5: House conventions
 

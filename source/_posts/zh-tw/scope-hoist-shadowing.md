@@ -107,12 +107,12 @@ fn2();
 - 區塊作用域 (Block Scope)：`let`、`const` 宣告的變數
 
 函式作用域：
-![](./images/function-scope.png)
+<img src="../../images/function-scope.png" width="400">
 
 區塊作用域：
 
-![](./images/block-scope.png)
-![](./images/block-scope-for-loop.png)
+<img src="../../images/block-scope.png" width="400">
+<img src="../../images/block-scope-for-loop.png" width="400">
 
 {% colorquote tips %}
 **小提示 / 補充知識**
@@ -182,7 +182,7 @@ JavaScript 並沒有一個固定做變數宣告的區域，你可以在任何地
 
 只有變數宣告 (declaration) 部分會提升，賦值 (assignment) 段落會留在原地
 
-![](./images/variable-declaration-assignment.png)
+<img src="../../images/variable-declaration-assignment.png" width="300">
 
 範例：
 
@@ -268,7 +268,7 @@ fn(); // '恩娣'
 可參考 Udacity 說明影片，有清楚的視覺演示：
 
 <!-- {% iframe https://www.youtube.com/embed/8z-HSS34dsM 600 400 %} -->
-<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="400" height="300" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="650" height="350" allowfullscreen></iframe>
 
 ### 為什麼要有提升的設計？
 
@@ -323,9 +323,7 @@ fn2(); // 恩娣
 
 參考 Udacity 影片：
 
-Source: [Intro to JavaScript | Udacity](https://youtu.be/NMLG2PQ6RRM)
-
-Source: Intro to JavaScript | Udacity
+<iframe src="https://youtube.com/embed/NMLG2PQ6RRM" frameborder="0" width="650" height="350" allowfullscreen></iframe>
 
 ### 變數 vs 參數：參數的傳遞方式
 

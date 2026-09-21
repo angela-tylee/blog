@@ -42,10 +42,10 @@ You will learn…
  To see if a value is returned, you can throw a piece of code into a console and see if a value is returned.
 
  expression will see the value returned.
-![](./images/expression-console.png)
+<img src="../../images/expression-console.png" width="500">
 
  statement does not return values, so you will only see console return `undefined`. 
-![](./images/statement-console.png)
+<img src="../../images/statement-console.png" width="500">
 
 {% colorquote info %}
 **Reference / Extended Reading**
@@ -82,13 +82,13 @@ You will learn…
 
  For example, `if... .else` If you understand the expression, you can understand that the if condition must be an expression that returns a value to avoid writing a `SyntaxError`.
 
-![](./images/if-else-condition-mdn.png)
+<img src="../../images/if-else-condition-mdn.png" width="450">
 
-![](./images/if-else-syntax-error-statement.png)
+<img src="../../images/if-else-syntax-error-statement.png" width="450">
 
  e.g. `Boolean()`
 
-![](./images/if-else-syntax-error-primitive-wrapper-object.png)
+<img src="../../images/if-else-syntax-error-primitive-wrapper-object.png" width="450">
 
 For example, `JSX` 
 
@@ -253,7 +253,7 @@ greet();
 
  (Read MDN to find out that Arrow Function is a shortened form of "function expression", not the syntactic sugar that all functions are written in.
 
-![](./images/expression-arrow-function.png)
+<img src="../../images/expression-arrow-function.png" width="500">
 
 {% colorquote info %}
 **References / Extended Reading**

@@ -105,12 +105,12 @@ fn2();
 - Block Scope: `let`, `const` declared variables
 
 Function Scope:
-![](./images/function-scope.png)
+<img src="../../images/function-scope.png" width="400">
 
 Block Scope:
 
-![](./images/block-scope.png)
-![](./images/block-scope-for-loop.png)
+<img src="../../images/block-scope.png" width="400">
+<img src="../../images/block-scope-for-loop.png" width="400">
 
 {% colorquote tips %}
 **Tips / Additional Knowledge**
@@ -180,7 +180,7 @@ console.log(x); // 3
 
  Only the declaration part of a variable is promoted, the assignment paragraph stays in place.
 
-![](./images/variable-declaration-assignment.png)
+<img src="../../images/variable-declaration-assignment.png" width="300">
 
  Example:
 
@@ -266,7 +266,7 @@ fn(); // '恩娣'
  See the Udacity explanatory video for a clear visual demonstration:
 
 <!-- {% iframe https://www.youtube.com/embed/8z-HSS34dsM 600 400 %} -->
-<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="400" height="300" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/8z-HSS34dsM" frameborder="0" width="650" height="350" allowfullscreen></iframe>
 
 ### Why is it important to have a lifted design?
 
@@ -321,9 +321,7 @@ fn2(); // 恩娣
 
  See the Udacity video:
 
- Source: [Intro to JavaScript | Udacity](https://youtu.be/NMLG2PQ6RRM)
-
- Source: Intro to JavaScript | Udacity
+<iframe src="https://youtube.com/embed/NMLG2PQ6RRM" frameborder="0" width="650" height="350" allowfullscreen></iframe>
 
 ### Variables vs Parameters: Parameter Delivery Methods
 
