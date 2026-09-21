@@ -5,6 +5,13 @@ categories: Technology
 tags: ['javascript', 'beginner']
 ---
 
+{% colorquote appendix %}
+You will learn…
+
+- Why are there so many ways to declare variables? Which one to use and when?
+- I often see `ReferenceError: Cannot access before initialization`. What does it mean?
+{% endcolorquote %}
+
 The first article is dedicated to the basics of the basics: variable declaration and the difference between var, let, and const.
 
 ## What is "declaration" of variables?
