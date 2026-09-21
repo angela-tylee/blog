@@ -112,9 +112,9 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 |  Target type |  Original type wrapped object |  Other methods |  Example |
 | --- | --- | --- | --- |
-| **String** | `String(value)` | `value.toString()` | `String(123)` → `"123"toString()` Commonly used for objects and values, not `null/undefined`. |
-| **String(value)** | `Number(value)` | `parseInt(value, base)parseFloat(value)+value` | `Number("123")` → `123parseInt("2")` → `2parseFloat("3.14")` → `3.14+ "42"` → `42` |
-| **Boolean** | `Boolean(value)` |  `value value` | `Boolean(0)` → `false!!!" hello"` → `true` |
+| **String** | `String(value)` | `value.toString()` | - `String(123)` → `"123"`<br><br>- `toString()` is commonly used for objects and numbers, not applicable to `null/undefined` |
+| **Number** | `Number(value)` | - `parseInt(value, base)`<br><br>- `parseFloat(value)`<br><br>- `+value`| - `Number("123")` → `123`<br><br>- `parseInt("2")` → `2`<br><br>- `parseFloat("3.14")` → `3.14`<br><br>- `+"42"` → `42` |
+| **Boolean** | `Boolean(value)` | `!!value` | - `Boolean(0)` → `false`<br><br>- `!!"hello"` → `true` |
 
 #### Primitive Wrapper Objects
 

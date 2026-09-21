@@ -185,6 +185,15 @@ languages.
 If the referenced post does not exist yet, leave the prose and mark it
 `*(work in progress)*` rather than writing a `post_link` that breaks `pnpm build`.
 
+### Tables
+
+Markdown table cells can't contain literal newlines — a bare line break collapses the
+row. For a line break inside a cell, use `<br>`:
+
+```markdown
+| **String** | `String(value)` | `value.toString()` | - `String(123)` → `"123"`<br><br>- `toString()` 常用於物件與數值，不適用於 `null/undefined` |
+```
+
 ### Escaping template syntax
 
 A post that discusses Hexo tags needs literal `{%` that Hexo must not execute:

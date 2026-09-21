@@ -113,24 +113,9 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 
 | 目標型別 | 原始型別包裹物件 | 其他方法 | 範例 |
 | --- | --- | --- | --- |
-| **String** | `String(value)` | `value.toString()` | `String(123)` → `"123"`
-
-`toString()` 常用於物件與數值，不適用於 `null/undefined` |
-| **Number** | `Number(value)` | `parseInt(value, base)`
-
-`parseFloat(value)`
-
-`+value`
- | `Number("123")` → `123`
-
-`parseInt("2")` → `2`
-
-`parseFloat("3.14")` → `3.14`
-
-`+"42"` → `42` |
-| **Boolean** | `Boolean(value)` | `!!value` | `Boolean(0)` → `false`
-
-`!!"hello"` → `true` |
+| **String** | `String(value)` | `value.toString()` | - `String(123)` → `"123"`<br><br>- `toString()` 常用於物件與數值，不適用於 `null/undefined` |
+| **Number** | `Number(value)` | - `parseInt(value, base)`<br><br>- `parseFloat(value)`<br><br>- `+value`| - `Number("123")` → `123`<br><br>- `parseInt("2")` → `2`<br><br>- `parseFloat("3.14")` → `3.14`<br><br>- `+"42"` → `42` |
+| **Boolean** | `Boolean(value)` | `!!value` | - `Boolean(0)` → `false`<br><br>- `!!"hello"` → `true` |
 
 #### 原始型別包裹物件 (Primitive Wrapper Object)
 
