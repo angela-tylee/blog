@@ -1,9 +1,21 @@
 ---
 title: 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式
-date: 2025-04-16 14:29:00
 categories: Technology
+date: 2025-04-16 14:29:00
+created: 2025-04-16 14:29:00
 tags:
 ---
+
+{% colorquote appendix %}
+學習重點：
+
+- 函式作用域 (Function Scope)、區塊作用域 (Block Scope)
+- 提升 (Hoisting)
+- 遮蔽 (Shadowing)
+- 暫死區 (TDZ, Temporary Dead Zone)
+- 語法作用域 (Lexical Scope)
+{% endcolorquote %}
+
 
 先上一些情境題 ：
 
@@ -248,9 +260,9 @@ fn(); // '恩娣'
 {% colorquote info %}
 **延伸閱讀**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link zh-tw/var-let-const-difference 變數宣告以及 var, let, const 的差異 %}*
 
-表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
+*{% post_link zh-tw/expression-statement 表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式 %}*
 {% endcolorquote %}
 
 可參考 Udacity 說明影片，有清楚的視覺演示：
@@ -373,7 +385,8 @@ fn2(); // 恩娣
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-變數宣告以及 var, let, const 的差異
+*{% post_link zh-tw/var-let-const-difference 變數宣告以及 var, let, const 的差異 %}*
+
 {% endcolorquote %}
 
 {% colorquote glossary %}

@@ -1,23 +1,28 @@
 ---
 title: this 的指向：什麼時候會用到 this？要怎麼用得正確？
-date: 2025-05-05 23:09:21
 categories: Technology
+excerpt: >-
+  <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一個 JavaScript 的關鍵字
+  (keyword)，通常用以代指呼叫函式時函式前的物件</p><p>然而 `this`
+  在不同執行環境下所指向的值也會有所不同</p>以下先列舉常見的實戰用法：
+date: 2025-05-05 23:09:21
+created: 2025-05-05 23:09:21
 tags:
-excerpt: <h4>為什麼要了解 this？實戰常見的 this</h4><p>`this` 是一個 JavaScript 的關鍵字 (keyword)，通常用以代指呼叫函式時函式前的物件</p><p>然而 `this` 在不同執行環境下所指向的值也會有所不同</p>以下先列舉常見的實戰用法：
-
 ---
 
-> 學習重點：
-> 
-> - this 的指向與實戰情境
-> - 預設綁定 (default binding)、隱含綁定 (implicit binding)、明確綁定 (explicit binding)
-> - 箭頭函式下的 this 爲什麼特別？
-> - 嚴格模式 (use strict) 下的 this
+{% colorquote appendix %}
+學習重點：
 
-> 必備前章知識：
-> - **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
-> - 箭頭函式的引用原因、使用時機
-> 
+- this 的指向與實戰情境
+- 預設綁定 (default binding)、隱含綁定 (implicit binding)、明確綁定 (explicit binding)
+- 箭頭函式下的 this 爲什麼特別？
+- 嚴格模式 (use strict) 下的 this
+
+- 必備前章知識：
+- **OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+- 箭頭函式的引用原因、使用時機
+{% endcolorquote %}
+
 
 ## 為什麼要了解 this？實戰常見的 this
 
@@ -252,9 +257,9 @@ const obj = {
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-靜態作用域：**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+靜態作用域：*{% post_link zh-tw/scope-hoist-shadowing 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式 %}*
 
-箭頭函式：箭頭函式的引用原因、使用時機
+箭頭函式：箭頭函式的引用原因、使用時機 *(work in progress)*...
 {% endcolorquote %}
 
 ### 明確綁定 / 顯式綁定 (Explicit Binding) ：Call, Apply, Bind

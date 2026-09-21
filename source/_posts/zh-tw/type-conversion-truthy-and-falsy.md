@@ -1,9 +1,20 @@
 ---
 title: 型別：型別的轉換 (Type Conversion) 與比較、真假值
-date: 2025-04-19 23:05:51
 categories: Technology
+date: 2025-04-19 23:05:51
+created: 2025-04-19 23:05:51
 tags:
 ---
+
+{% colorquote appendix %}
+學習重點：
+
+- JavaScript 的 8 種型別
+- 型別轉換的方法：顯性轉換 (Explicit coercion)、隱性轉換 (Implicit coercion)
+- 原始型別包裹物件 (Primitive Wrapper Object)
+- 型別比較的規則：寬鬆相等、嚴格相等
+- 真值與假值
+{% endcolorquote %}
 
 ## 8 種型別
 
@@ -70,7 +81,7 @@ Array.isArray([1, 2, 3]) // 應改用 isArray() 檢驗型別
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言**
+**JavaScript 屬於直譯式語言、弱型別、動態型、單執行緒、同步語言、FP + OOP 語言** *(work in progress)*...
 {% endcolorquote %}
 
 好處是撰寫時很方便又快速，省去許多麻煩；壞處就是如果沒有搞懂轉換的規則，就容易遇到非預期的錯誤
@@ -219,9 +230,9 @@ console.log(3 > 2 && 5 < 10);  // true，兩個條件都為 true，結果為 tru
 
 類陣列：
 
-**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件
+**OOP 與 Prototype 原型：Constructor 建構子、new、class、instance、blueprint** 原型鏈、屬性、方法、類陣列 (forEach) - 看懂 mdn 文件 *(work in progress)*...
 
-DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes
+**DOM: Node > Element > Token (NodeList 類陣列）Frequently manipulate nodes** *(work in progress)*...
 {% endcolorquote %}
 
 ## 型別比較
@@ -270,7 +281,7 @@ null === undefined // false：型別不同
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-Call by Sharing：物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）
+Call by Sharing：物件：物件為什麼不能相等？物件 vs 變數的求值策略（傳值？傳址？傳參考？）*(work in progress)*...
 {% endcolorquote %}
 
 - `null`、`undefined`、`NaN`
@@ -305,7 +316,7 @@ null == undefined      // true，這兩者只與自己和彼此互相相等
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-is not defined、undefined、NAN、null
+is not defined、undefined、NAN、null *(work in progress)*...
 {% endcolorquote %}
 
 ## 真值、假值
@@ -328,7 +339,7 @@ Boolean(function(){})   // true
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-三元運算子、II && 運算子 **Operators 運算子：Prefix & Postfix、&& ||**
+三元運算子、II && 運算子 **Operators 運算子：Prefix & Postfix、&& ||** *(work in progress)*...
 {% endcolorquote %}
 
 ## 總結

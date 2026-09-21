@@ -1,8 +1,11 @@
 ---
 title: 變數宣告以及 var, let, const 的差異
-date: 2025-04-13 11:00:00
 categories: Technology
-tags: ['javascript', 'beginner']
+tags:
+  - javascript
+  - beginner
+date: 2025-04-13 11:00:00
+created: 2025-04-13 11:00:00
 ---
 
 {% colorquote appendix %}
@@ -45,7 +48,7 @@ const res = await fetch(url);
 **詞彙解釋**
 
 所謂「回傳」
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ work in progress…
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？ *(work in progress)*...
 
 {% endcolorquote %}
 
@@ -138,7 +141,6 @@ let / const 變數宣告、箭頭函式（arrow functions）、樣板字面�
 **參考資料 / 延伸閱讀**
 
 *{% post_link zh-tw/scope-hoist-shadowing %}*
-
 {% endcolorquote %}
 
 #### var：全域、函式作用域

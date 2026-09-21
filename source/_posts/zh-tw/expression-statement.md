@@ -1,9 +1,19 @@
 ---
 title: 表達式 (Expression) vs 陳述式 (Statement)、函式陳述式 vs 函式表達式
-date: 2025-04-17 23:03:16
 categories: Technology
+date: 2025-04-17 23:03:16
+created: 2025-04-17 23:03:16
 tags:
 ---
+
+
+{% colorquote appendix %}
+學習重點：
+
+- 表達式 (expression) 和陳述式 (statement) 是什麼，如何區分？
+- 函式表達式 (function expression) 和函式陳述式 (function statement) 是什麼？用途有什麼差異？
+{% endcolorquote %}
+
 
 ## 表達式與陳述式是什麼？
 
@@ -43,7 +53,7 @@ JavaScript （以及大部分的程式語言）的語法可依據是否回傳值
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？
+看似基礎但把新手搞暈頭的 console.log vs return 印出值？回傳值？*(work in progress)*...
 {% endcolorquote %}
 
 關於表達式 (expression) 和陳述式 (statement) 的差異再看一些 MDN 和 Wikipedia 上的敘述：
@@ -123,9 +133,9 @@ return (
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式物件：**型別：型別的轉換 (Type Conversion) 與比較、真假值**
+函式物件：*{% post_link zh-tw/type-coversion-truthy-and-falsy 型別：型別的轉換 (Type Conversion) 與比較、真假值 $}*
 
-一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式**
+一級函式 (first-class function)：**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 {% endcolorquote %}
 
 接下來就帶到函式表達式與函式陳述式的不同，先從基本語法結構來看：
@@ -200,7 +210,7 @@ greet();
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式**
+*{% post_link zh-tw/scope-hoist-shadowing 什麼是作用域 (Scope)？以及提升(Hoisting)、遮蔽 (Shadowing)、Lexical Scope、TDZ、參數的傳遞方式 %}*
 {% endcolorquote %}
 
 ### 具名 vs 匿名
@@ -244,7 +254,7 @@ greet();
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-函式：封裝（好的封裝）、閉包 Counter II
+函式：封裝（好的封裝）、閉包 Counter II *(work in progress)*...
 {% endcolorquote %}
 
 最後補充一點：
@@ -258,7 +268,7 @@ greet();
 {% colorquote info %}
 **參考資料 / 延伸閱讀**
 
-**函式：一級函式、高階函式、回呼函式**
+**函式：一級函式、高階函式、回呼函式** *(work in progress)*...
 
 箭頭函式的引用原因、使用時機
 {% endcolorquote %}
